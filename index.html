@@ -17,313 +17,63 @@
     --gray-text: #6B7A80;
     --petrol-light: #E8F3F5;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--gray-bg);
-    font-family: 'Barlow', sans-serif;
-    color: var(--black);
-    min-height: 100vh;
-  }
-
-  .header {
-    background: var(--white);
-    border-bottom: 3px solid var(--blue);
-    padding: 20px 40px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    box-shadow: 0 2px 16px rgba(0,50,60,0.07);
-  }
-
-  .logo-text {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-size: 24px;
-    letter-spacing: -0.02em;
-    color: var(--black);
-    text-transform: uppercase;
-    line-height: 1;
-  }
+  body { background: var(--gray-bg); font-family: 'Barlow', sans-serif; color: var(--black); min-height: 100vh; }
+  .header { background: var(--white); border-bottom: 3px solid var(--blue); padding: 20px 40px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 20px; box-shadow: 0 2px 16px rgba(0,50,60,0.07); }
+  .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 24px; letter-spacing: -0.02em; color: var(--black); text-transform: uppercase; line-height: 1; }
   .logo-text .accent { color: var(--blue); }
-
   .header-divider { width: 1px; height: 30px; background: var(--gray-border); }
-
-  .header-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gray-text);
-  }
-
+  .header-title { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-text); }
   .progress-bar-wrap { height: 3px; background: var(--gray-border); }
-  .progress-bar-fill {
-    height: 3px;
-    background: var(--blue);
-    width: 0%;
-    transition: width 0.4s ease;
-  }
-  .progress-label {
-    background: var(--white);
-    padding: 7px 40px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--gray-text);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--gray-border);
-  }
+  .progress-bar-fill { height: 3px; background: var(--blue); width: 0%; transition: width 0.4s ease; }
+  .progress-label { background: var(--white); padding: 7px 40px; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; color: var(--gray-text); letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid var(--gray-border); }
   .progress-label span { color: var(--petrol); font-weight: 800; }
-
-  .hero {
-    background: var(--petrol);
-    padding: 44px 40px 40px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::after {
-    content: 'MB_';
-    position: absolute;
-    right: -10px; top: -10px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-size: 130px;
-    color: rgba(0,255,242,0.05);
-    line-height: 1;
-    pointer-events: none;
-  }
-  .hero-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--blue);
-    margin-bottom: 10px;
-    font-weight: 700;
-  }
-  .hero-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(28px, 4.5vw, 48px);
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-    line-height: 1.05;
-    color: var(--white);
-  }
+  .hero { background: var(--petrol); padding: 44px 40px 40px; position: relative; overflow: hidden; }
+  .hero::after { content: 'MB_'; position: absolute; right: -10px; top: -10px; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 130px; color: rgba(0,255,242,0.05); line-height: 1; pointer-events: none; }
+  .hero-label { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; font-weight: 700; }
+  .hero-title { font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 4.5vw, 48px); font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; line-height: 1.05; color: var(--white); }
   .hero-title .accent { color: var(--blue); }
-  .hero-desc {
-    margin-top: 14px;
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    font-weight: 300;
-    max-width: 540px;
-    line-height: 1.7;
-  }
-
-  .form-container {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 36px 20px 80px;
-  }
-
+  .hero-desc { margin-top: 14px; font-size: 13px; color: rgba(255,255,255,0.5); font-weight: 300; max-width: 540px; line-height: 1.7; }
+  .form-container { max-width: 780px; margin: 0 auto; padding: 36px 20px 80px; }
   .section-block { margin-bottom: 16px; margin-top: 52px; }
   .section-block:first-child { margin-top: 0; }
-
-  .section-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 9px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--blue);
-    margin-bottom: 6px;
-    font-weight: 700;
-  }
-  .section-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 19px;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    color: var(--petrol);
-    border-left: 3px solid var(--blue);
-    padding-left: 14px;
-  }
-
-  .q-card {
-    background: var(--white);
-    border: 1px solid var(--gray-border);
-    border-radius: 6px;
-    padding: 22px 24px 20px;
-    margin-bottom: 10px;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-  .q-card:hover {
-    border-color: #9ef5f0;
-    box-shadow: 0 2px 16px rgba(0,255,242,0.07);
-  }
-
-  .q-number {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    color: var(--blue);
-    text-transform: uppercase;
-    font-weight: 700;
-    background: var(--petrol);
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 2px;
-    margin-bottom: 8px;
-  }
-  .q-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--black);
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
-    margin-bottom: 4px;
-  }
-  .q-desc {
-    font-size: 12px;
-    color: var(--gray-text);
-    line-height: 1.6;
-    margin-bottom: 16px;
-  }
-
+  .section-label { font-family: 'Montserrat', sans-serif; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; font-weight: 700; }
+  .section-title { font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 800; letter-spacing: -0.01em; text-transform: uppercase; color: var(--petrol); border-left: 3px solid var(--blue); padding-left: 14px; }
+  .q-card { background: var(--white); border: 1px solid var(--gray-border); border-radius: 6px; padding: 22px 24px 20px; margin-bottom: 10px; transition: border-color 0.2s, box-shadow 0.2s; }
+  .q-card:hover { border-color: #9ef5f0; box-shadow: 0 2px 16px rgba(0,255,242,0.07); }
+  .q-number { font-family: 'Montserrat', sans-serif; font-size: 9px; letter-spacing: 0.2em; color: var(--blue); text-transform: uppercase; font-weight: 700; background: var(--petrol); display: inline-block; padding: 2px 8px; border-radius: 2px; margin-bottom: 8px; }
+  .q-title { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; color: var(--black); text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 4px; }
+  .q-desc { font-size: 12px; color: var(--gray-text); line-height: 1.6; margin-bottom: 16px; }
   .scale-wrap { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 6px; }
   .scale-wrap input[type="radio"] { display: none; }
-  .scale-wrap label {
-    width: 42px; height: 42px;
-    display: flex; align-items: center; justify-content: center;
-    border: 1.5px solid var(--gray-border);
-    border-radius: 4px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px; font-weight: 700;
-    color: #C0C8CA;
-    cursor: pointer;
-    transition: all 0.15s;
-    user-select: none;
-    background: var(--gray-bg);
-  }
-  .scale-wrap label:hover {
-    border-color: var(--blue);
-    color: var(--petrol);
-    background: var(--petrol-light);
-  }
-  .scale-wrap input[type="radio"]:checked + label {
-    background: var(--blue);
-    border-color: var(--blue);
-    color: var(--black);
-    box-shadow: 0 2px 10px rgba(0,255,242,0.3);
-  }
-
-  .scale-hints {
-    display: flex; justify-content: space-between;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 9px; color: #C0C8CA;
-    letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
-    margin-bottom: 14px; padding: 0 2px;
-  }
-
-  .obs-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 9px; font-weight: 700;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: #C0C8CA; margin-bottom: 6px;
-  }
+  .scale-wrap label { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border: 1.5px solid var(--gray-border); border-radius: 4px; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: #C0C8CA; cursor: pointer; transition: all 0.15s; user-select: none; background: var(--gray-bg); }
+  .scale-wrap label:hover { border-color: var(--blue); color: var(--petrol); background: var(--petrol-light); }
+  .scale-wrap input[type="radio"]:checked + label { background: var(--blue); border-color: var(--blue); color: var(--black); box-shadow: 0 2px 10px rgba(0,255,242,0.3); }
+  .scale-hints { display: flex; justify-content: space-between; font-family: 'Montserrat', sans-serif; font-size: 9px; color: #C0C8CA; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; margin-bottom: 14px; padding: 0 2px; }
+  .obs-label { font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C0C8CA; margin-bottom: 6px; }
   .obs-label span { font-weight: 400; }
-
-  .obs-input {
-    width: 100%;
-    background: var(--gray-bg);
-    border: 1.5px solid var(--gray-border);
-    border-radius: 4px;
-    padding: 10px 14px;
-    color: var(--black);
-    font-family: 'Barlow', sans-serif;
-    font-size: 13px; resize: vertical; min-height: 56px;
-    transition: border-color 0.2s; outline: none;
-  }
+  .obs-input { width: 100%; background: var(--gray-bg); border: 1.5px solid var(--gray-border); border-radius: 4px; padding: 10px 14px; color: var(--black); font-family: 'Barlow', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; transition: border-color 0.2s; outline: none; }
   .obs-input:focus { border-color: var(--blue); background: var(--white); }
   .obs-input::placeholder { color: #D0D8DA; }
-
-  .email-card {
-    background: var(--petrol-light);
-    border: 1.5px solid #B8DBE0;
-    border-radius: 6px; padding: 20px 24px; margin-bottom: 26px;
-  }
-  .email-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--petrol); margin-bottom: 10px;
-  }
-  .email-input {
-    width: 100%; background: var(--white);
-    border: 1.5px solid #B8DBE0; border-radius: 4px;
-    padding: 12px 16px; color: var(--black);
-    font-family: 'Barlow', sans-serif; font-size: 14px;
-    outline: none; transition: border-color 0.2s;
-  }
+  .email-card { background: var(--petrol-light); border: 1.5px solid #B8DBE0; border-radius: 6px; padding: 20px 24px; margin-bottom: 26px; }
+  .email-label { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--petrol); margin-bottom: 10px; }
+  .email-input { width: 100%; background: var(--white); border: 1.5px solid #B8DBE0; border-radius: 4px; padding: 12px 16px; color: var(--black); font-family: 'Barlow', sans-serif; font-size: 14px; outline: none; transition: border-color 0.2s; }
   .email-input:focus { border-color: var(--blue); }
   .email-input::placeholder { color: #9ABDC3; }
-
   .submit-area { margin-top: 44px; text-align: center; }
-  .submit-btn {
-    background: var(--petrol); color: var(--blue);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px; font-weight: 800;
-    letter-spacing: 0.2em; text-transform: uppercase;
-    border: none; padding: 18px 52px; border-radius: 4px;
-    cursor: pointer; transition: all 0.2s;
-  }
-  .submit-btn:hover {
-    background: var(--black);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,50,60,0.18);
-  }
+  .submit-btn { background: var(--petrol); color: var(--blue); font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; border: none; padding: 18px 52px; border-radius: 4px; cursor: pointer; transition: all 0.2s; }
+  .submit-btn:hover { background: var(--black); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,50,60,0.18); }
   .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-  .submit-note {
-    margin-top: 10px; font-size: 11px; color: #BCC5C8;
-    font-family: 'Montserrat', sans-serif; letter-spacing: 0.04em;
-  }
-
-  .msg {
-    display: none; margin-top: 18px; padding: 14px 20px; border-radius: 4px;
-    font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600;
-    letter-spacing: 0.05em;
-  }
+  .submit-note { margin-top: 10px; font-size: 11px; color: #BCC5C8; font-family: 'Montserrat', sans-serif; letter-spacing: 0.04em; }
+  .msg { display: none; margin-top: 18px; padding: 14px 20px; border-radius: 4px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; }
   .msg.success { background: #E8F8F7; border: 1.5px solid var(--blue); color: var(--petrol); }
   .msg.error { background: #FFF0F0; border: 1.5px solid #ffb3b3; color: #cc0000; }
-
   .success-screen { display: none; text-align: center; padding: 80px 20px; }
   .success-screen.show { display: block; }
-  .success-check {
-    width: 64px; height: 64px; background: var(--blue); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 24px; font-size: 28px; color: var(--black); font-weight: 900;
-    font-family: 'Montserrat', sans-serif;
-  }
-  .success-title {
-    font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 900;
-    text-transform: uppercase; color: var(--petrol); letter-spacing: -0.01em; margin-bottom: 10px;
-  }
+  .success-check { width: 64px; height: 64px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 28px; color: var(--black); font-weight: 900; font-family: 'Montserrat', sans-serif; }
+  .success-title { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 900; text-transform: uppercase; color: var(--petrol); letter-spacing: -0.01em; margin-bottom: 10px; }
   .success-sub { color: var(--gray-text); font-size: 14px; line-height: 1.7; }
-
-  .footer {
-    background: var(--petrol); padding: 18px 40px; text-align: center;
-    font-family: 'Montserrat', sans-serif; font-size: 10px;
-    color: rgba(255,255,255,0.3); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
-  }
-
+  .footer { background: var(--petrol); padding: 18px 40px; text-align: center; font-family: 'Montserrat', sans-serif; font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
   @media (max-width: 600px) {
     .header { padding: 14px 16px; }
     .hero { padding: 30px 16px 26px; }
@@ -341,10 +91,7 @@
   <div class="header-divider"></div>
   <div class="header-title">Autoavaliação de Colaboradores</div>
 </div>
-
-<div class="progress-bar-wrap">
-  <div class="progress-bar-fill" id="progressBar"></div>
-</div>
+<div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
 <div class="progress-label">Progresso: <span id="progressText">0 de 48 respondidas</span></div>
 
 <div class="hero">
@@ -361,219 +108,199 @@
       <input class="email-input" type="email" name="email" placeholder="seu.email@mybest.com.br" required>
     </div>
 
-    <!-- SEÇÃO 1 -->
     <div class="section-block">
       <div class="section-label">Seção 1 de 2</div>
       <div class="section-title">Conduta Geral</div>
     </div>
 
-    <div class="q-card"><div class="q-number">1.0</div><div class="q-title">Apresentação Pessoal</div><div class="q-desc">Cuidados com higiene, postura, aparência e respeito ao espaço coletivo.</div><div class="scale-wrap" id="s1q1"><input type="radio" name="s1q1" id="s1q1-1" value="1"><label for="s1q1-1">1</label><input type="radio" name="s1q1" id="s1q1-2" value="2"><label for="s1q1-2">2</label><input type="radio" name="s1q1" id="s1q1-3" value="3"><label for="s1q1-3">3</label><input type="radio" name="s1q1" id="s1q1-4" value="4"><label for="s1q1-4">4</label><input type="radio" name="s1q1" id="s1q1-5" value="5"><label for="s1q1-5">5</label><input type="radio" name="s1q1" id="s1q1-6" value="6"><label for="s1q1-6">6</label><input type="radio" name="s1q1" id="s1q1-7" value="7"><label for="s1q1-7">7</label><input type="radio" name="s1q1" id="s1q1-8" value="8"><label for="s1q1-8">8</label><input type="radio" name="s1q1" id="s1q1-9" value="9"><label for="s1q1-9">9</label><input type="radio" name="s1q1" id="s1q1-10" value="10"><label for="s1q1-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q1" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">1.0</div><div class="q-title">Apresentação Pessoal</div><div class="q-desc">Cuidados com higiene, postura, aparência e respeito ao espaço coletivo.</div><div class="scale-wrap" id="s1q1"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q1" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">2.0</div><div class="q-title">Do Uso do Uniforme</div><div class="q-desc">Uso correto, completo e adequado do uniforme durante o trabalho.</div><div class="scale-wrap" id="s1q2"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q2" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">3.0</div><div class="q-title">Comunicação</div><div class="q-desc">Clareza, educação, objetividade e cordialidade ao se comunicar.</div><div class="scale-wrap" id="s1q3"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q3" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">4.0</div><div class="q-title">Receptividade</div><div class="q-desc">Atenção, simpatia e disponibilidade ao receber clientes e colegas.</div><div class="scale-wrap" id="s1q4"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q4" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">5.0</div><div class="q-title">Organização e Limpeza</div><div class="q-desc">Zelo pelo ambiente de trabalho, materiais e equipamentos.</div><div class="scale-wrap" id="s1q5"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q5" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">6.0</div><div class="q-title">Das Refeições</div><div class="q-desc">Respeito aos horários, bom senso e cuidado com o ambiente de refeição.</div><div class="scale-wrap" id="s1q6"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q6" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">7.0</div><div class="q-title">Do Uso do Telefone</div><div class="q-desc">É proibido o uso do celular durante o horário de trabalho, tanto na área técnica quanto no balcão de atendimento.</div><div class="scale-wrap" id="s1q7"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q7" placeholder="Adicione uma observação..."></textarea></div>
 
-    <div class="q-card"><div class="q-number">2.0</div><div class="q-title">Do Uso do Uniforme</div><div class="q-desc">Uso correto, completo e adequado do uniforme durante o trabalho.</div><div class="scale-wrap" id="s1q2"><input type="radio" name="s1q2" id="s1q2-1" value="1"><label for="s1q2-1">1</label><input type="radio" name="s1q2" id="s1q2-2" value="2"><label for="s1q2-2">2</label><input type="radio" name="s1q2" id="s1q2-3" value="3"><label for="s1q2-3">3</label><input type="radio" name="s1q2" id="s1q2-4" value="4"><label for="s1q2-4">4</label><input type="radio" name="s1q2" id="s1q2-5" value="5"><label for="s1q2-5">5</label><input type="radio" name="s1q2" id="s1q2-6" value="6"><label for="s1q2-6">6</label><input type="radio" name="s1q2" id="s1q2-7" value="7"><label for="s1q2-7">7</label><input type="radio" name="s1q2" id="s1q2-8" value="8"><label for="s1q2-8">8</label><input type="radio" name="s1q2" id="s1q2-9" value="9"><label for="s1q2-9">9</label><input type="radio" name="s1q2" id="s1q2-10" value="10"><label for="s1q2-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q2" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">3.0</div><div class="q-title">Comunicação</div><div class="q-desc">Clareza, educação, objetividade e cordialidade ao se comunicar.</div><div class="scale-wrap" id="s1q3"><input type="radio" name="s1q3" id="s1q3-1" value="1"><label for="s1q3-1">1</label><input type="radio" name="s1q3" id="s1q3-2" value="2"><label for="s1q3-2">2</label><input type="radio" name="s1q3" id="s1q3-3" value="3"><label for="s1q3-3">3</label><input type="radio" name="s1q3" id="s1q3-4" value="4"><label for="s1q3-4">4</label><input type="radio" name="s1q3" id="s1q3-5" value="5"><label for="s1q3-5">5</label><input type="radio" name="s1q3" id="s1q3-6" value="6"><label for="s1q3-6">6</label><input type="radio" name="s1q3" id="s1q3-7" value="7"><label for="s1q3-7">7</label><input type="radio" name="s1q3" id="s1q3-8" value="8"><label for="s1q3-8">8</label><input type="radio" name="s1q3" id="s1q3-9" value="9"><label for="s1q3-9">9</label><input type="radio" name="s1q3" id="s1q3-10" value="10"><label for="s1q3-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q3" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">4.0</div><div class="q-title">Receptividade</div><div class="q-desc">Atenção, simpatia e disponibilidade ao receber clientes e colegas.</div><div class="scale-wrap" id="s1q4"><input type="radio" name="s1q4" id="s1q4-1" value="1"><label for="s1q4-1">1</label><input type="radio" name="s1q4" id="s1q4-2" value="2"><label for="s1q4-2">2</label><input type="radio" name="s1q4" id="s1q4-3" value="3"><label for="s1q4-3">3</label><input type="radio" name="s1q4" id="s1q4-4" value="4"><label for="s1q4-4">4</label><input type="radio" name="s1q4" id="s1q4-5" value="5"><label for="s1q4-5">5</label><input type="radio" name="s1q4" id="s1q4-6" value="6"><label for="s1q4-6">6</label><input type="radio" name="s1q4" id="s1q4-7" value="7"><label for="s1q4-7">7</label><input type="radio" name="s1q4" id="s1q4-8" value="8"><label for="s1q4-8">8</label><input type="radio" name="s1q4" id="s1q4-9" value="9"><label for="s1q4-9">9</label><input type="radio" name="s1q4" id="s1q4-10" value="10"><label for="s1q4-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q4" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">5.0</div><div class="q-title">Organização e Limpeza</div><div class="q-desc">Zelo pelo ambiente de trabalho, materiais e equipamentos.</div><div class="scale-wrap" id="s1q5"><input type="radio" name="s1q5" id="s1q5-1" value="1"><label for="s1q5-1">1</label><input type="radio" name="s1q5" id="s1q5-2" value="2"><label for="s1q5-2">2</label><input type="radio" name="s1q5" id="s1q5-3" value="3"><label for="s1q5-3">3</label><input type="radio" name="s1q5" id="s1q5-4" value="4"><label for="s1q5-4">4</label><input type="radio" name="s1q5" id="s1q5-5" value="5"><label for="s1q5-5">5</label><input type="radio" name="s1q5" id="s1q5-6" value="6"><label for="s1q5-6">6</label><input type="radio" name="s1q5" id="s1q5-7" value="7"><label for="s1q5-7">7</label><input type="radio" name="s1q5" id="s1q5-8" value="8"><label for="s1q5-8">8</label><input type="radio" name="s1q5" id="s1q5-9" value="9"><label for="s1q5-9">9</label><input type="radio" name="s1q5" id="s1q5-10" value="10"><label for="s1q5-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q5" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">6.0</div><div class="q-title">Das Refeições</div><div class="q-desc">Respeito aos horários, bom senso e cuidado com o ambiente de refeição.</div><div class="scale-wrap" id="s1q6"><input type="radio" name="s1q6" id="s1q6-1" value="1"><label for="s1q6-1">1</label><input type="radio" name="s1q6" id="s1q6-2" value="2"><label for="s1q6-2">2</label><input type="radio" name="s1q6" id="s1q6-3" value="3"><label for="s1q6-3">3</label><input type="radio" name="s1q6" id="s1q6-4" value="4"><label for="s1q6-4">4</label><input type="radio" name="s1q6" id="s1q6-5" value="5"><label for="s1q6-5">5</label><input type="radio" name="s1q6" id="s1q6-6" value="6"><label for="s1q6-6">6</label><input type="radio" name="s1q6" id="s1q6-7" value="7"><label for="s1q6-7">7</label><input type="radio" name="s1q6" id="s1q6-8" value="8"><label for="s1q6-8">8</label><input type="radio" name="s1q6" id="s1q6-9" value="9"><label for="s1q6-9">9</label><input type="radio" name="s1q6" id="s1q6-10" value="10"><label for="s1q6-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q6" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">7.0</div><div class="q-title">Do Uso do Telefone</div><div class="q-desc">É proibido o uso do celular durante o horário de trabalho, tanto na área técnica quanto no balcão de atendimento.</div><div class="scale-wrap" id="s1q7"><input type="radio" name="s1q7" id="s1q7-1" value="1"><label for="s1q7-1">1</label><input type="radio" name="s1q7" id="s1q7-2" value="2"><label for="s1q7-2">2</label><input type="radio" name="s1q7" id="s1q7-3" value="3"><label for="s1q7-3">3</label><input type="radio" name="s1q7" id="s1q7-4" value="4"><label for="s1q7-4">4</label><input type="radio" name="s1q7" id="s1q7-5" value="5"><label for="s1q7-5">5</label><input type="radio" name="s1q7" id="s1q7-6" value="6"><label for="s1q7-6">6</label><input type="radio" name="s1q7" id="s1q7-7" value="7"><label for="s1q7-7">7</label><input type="radio" name="s1q7" id="s1q7-8" value="8"><label for="s1q7-8">8</label><input type="radio" name="s1q7" id="s1q7-9" value="9"><label for="s1q7-9">9</label><input type="radio" name="s1q7" id="s1q7-10" value="10"><label for="s1q7-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q7" placeholder="Adicione uma observação..."></textarea></div>
-
-    <!-- SEÇÃO 2 -->
     <div class="section-block" style="margin-top:52px;">
       <div class="section-label">Seção 2 de 2</div>
       <div class="section-title">Operação Técnica</div>
     </div>
 
-    <div class="q-card"><div class="q-number">1.0</div><div class="q-title">Apresentação</div><div class="q-desc">Como se apresenta tecnicamente diante do cliente e da equipe.</div><div class="scale-wrap" id="s2q1"><input type="radio" name="s2q1" id="s2q1-1" value="1"><label for="s2q1-1">1</label><input type="radio" name="s2q1" id="s2q1-2" value="2"><label for="s2q1-2">2</label><input type="radio" name="s2q1" id="s2q1-3" value="3"><label for="s2q1-3">3</label><input type="radio" name="s2q1" id="s2q1-4" value="4"><label for="s2q1-4">4</label><input type="radio" name="s2q1" id="s2q1-5" value="5"><label for="s2q1-5">5</label><input type="radio" name="s2q1" id="s2q1-6" value="6"><label for="s2q1-6">6</label><input type="radio" name="s2q1" id="s2q1-7" value="7"><label for="s2q1-7">7</label><input type="radio" name="s2q1" id="s2q1-8" value="8"><label for="s2q1-8">8</label><input type="radio" name="s2q1" id="s2q1-9" value="9"><label for="s2q1-9">9</label><input type="radio" name="s2q1" id="s2q1-10" value="10"><label for="s2q1-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q1" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">2.3</div><div class="q-title">Posicionamento no Espaço Técnico</div><div class="q-desc">Posicionamento no espaço técnico e deixar o balcão livre para os auxiliares.</div><div class="scale-wrap" id="s2q2"><input type="radio" name="s2q2" id="s2q2-1" value="1"><label for="s2q2-1">1</label><input type="radio" name="s2q2" id="s2q2-2" value="2"><label for="s2q2-2">2</label><input type="radio" name="s2q2" id="s2q2-3" value="3"><label for="s2q2-3">3</label><input type="radio" name="s2q2" id="s2q2-4" value="4"><label for="s2q2-4">4</label><input type="radio" name="s2q2" id="s2q2-5" value="5"><label for="s2q2-5">5</label><input type="radio" name="s2q2" id="s2q2-6" value="6"><label for="s2q2-6">6</label><input type="radio" name="s2q2" id="s2q2-7" value="7"><label for="s2q2-7">7</label><input type="radio" name="s2q2" id="s2q2-8" value="8"><label for="s2q2-8">8</label><input type="radio" name="s2q2" id="s2q2-9" value="9"><label for="s2q2-9">9</label><input type="radio" name="s2q2" id="s2q2-10" value="10"><label for="s2q2-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q2" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">2.4</div><div class="q-title">Prontidão para Recebimento do Cliente</div><div class="scale-wrap" id="s2q3"><input type="radio" name="s2q3" id="s2q3-1" value="1"><label for="s2q3-1">1</label><input type="radio" name="s2q3" id="s2q3-2" value="2"><label for="s2q3-2">2</label><input type="radio" name="s2q3" id="s2q3-3" value="3"><label for="s2q3-3">3</label><input type="radio" name="s2q3" id="s2q3-4" value="4"><label for="s2q3-4">4</label><input type="radio" name="s2q3" id="s2q3-5" value="5"><label for="s2q3-5">5</label><input type="radio" name="s2q3" id="s2q3-6" value="6"><label for="s2q3-6">6</label><input type="radio" name="s2q3" id="s2q3-7" value="7"><label for="s2q3-7">7</label><input type="radio" name="s2q3" id="s2q3-8" value="8"><label for="s2q3-8">8</label><input type="radio" name="s2q3" id="s2q3-9" value="9"><label for="s2q3-9">9</label><input type="radio" name="s2q3" id="s2q3-10" value="10"><label for="s2q3-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q3" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">2.5</div><div class="q-title">Recebimento com Entusiasmo e Cordialidade</div><div class="q-desc">Recebimento do cliente com entusiasmo e cordialidade com aperto de mão.</div><div class="scale-wrap" id="s2q4"><input type="radio" name="s2q4" id="s2q4-1" value="1"><label for="s2q4-1">1</label><input type="radio" name="s2q4" id="s2q4-2" value="2"><label for="s2q4-2">2</label><input type="radio" name="s2q4" id="s2q4-3" value="3"><label for="s2q4-3">3</label><input type="radio" name="s2q4" id="s2q4-4" value="4"><label for="s2q4-4">4</label><input type="radio" name="s2q4" id="s2q4-5" value="5"><label for="s2q4-5">5</label><input type="radio" name="s2q4" id="s2q4-6" value="6"><label for="s2q4-6">6</label><input type="radio" name="s2q4" id="s2q4-7" value="7"><label for="s2q4-7">7</label><input type="radio" name="s2q4" id="s2q4-8" value="8"><label for="s2q4-8">8</label><input type="radio" name="s2q4" id="s2q4-9" value="9"><label for="s2q4-9">9</label><input type="radio" name="s2q4" id="s2q4-10" value="10"><label for="s2q4-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q4" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">2.6</div><div class="q-title">Saudação Imediata ao Cliente</div><div class="q-desc">Recebimento e saudação do cliente imediatamente ao adentrar o espaço técnico.</div><div class="scale-wrap" id="s2q5"><input type="radio" name="s2q5" id="s2q5-1" value="1"><label for="s2q5-1">1</label><input type="radio" name="s2q5" id="s2q5-2" value="2"><label for="s2q5-2">2</label><input type="radio" name="s2q5" id="s2q5-3" value="3"><label for="s2q5-3">3</label><input type="radio" name="s2q5" id="s2q5-4" value="4"><label for="s2q5-4">4</label><input type="radio" name="s2q5" id="s2q5-5" value="5"><label for="s2q5-5">5</label><input type="radio" name="s2q5" id="s2q5-6" value="6"><label for="s2q5-6">6</label><input type="radio" name="s2q5" id="s2q5-7" value="7"><label for="s2q5-7">7</label><input type="radio" name="s2q5" id="s2q5-8" value="8"><label for="s2q5-8">8</label><input type="radio" name="s2q5" id="s2q5-9" value="9"><label for="s2q5-9">9</label><input type="radio" name="s2q5" id="s2q5-10" value="10"><label for="s2q5-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q5" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">3.1.1</div><div class="q-title">Postura Corporal e Proatividade</div><div class="q-desc">Adoção de postura ativa, excluindo mãos na cintura e apoio nas máquinas, equipamentos ou paredes.</div><div class="scale-wrap" id="s2q6"><input type="radio" name="s2q6" id="s2q6-1" value="1"><label for="s2q6-1">1</label><input type="radio" name="s2q6" id="s2q6-2" value="2"><label for="s2q6-2">2</label><input type="radio" name="s2q6" id="s2q6-3" value="3"><label for="s2q6-3">3</label><input type="radio" name="s2q6" id="s2q6-4" value="4"><label for="s2q6-4">4</label><input type="radio" name="s2q6" id="s2q6-5" value="5"><label for="s2q6-5">5</label><input type="radio" name="s2q6" id="s2q6-6" value="6"><label for="s2q6-6">6</label><input type="radio" name="s2q6" id="s2q6-7" value="7"><label for="s2q6-7">7</label><input type="radio" name="s2q6" id="s2q6-8" value="8"><label for="s2q6-8">8</label><input type="radio" name="s2q6" id="s2q6-9" value="9"><label for="s2q6-9">9</label><input type="radio" name="s2q6" id="s2q6-10" value="10"><label for="s2q6-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q6" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">3.1.2</div><div class="q-title">Proatividade e Visão 360°</div><div class="q-desc">Manter proatividade e visão generalizada de todo o espaço e dos clientes, com deslocamento constante.</div><div class="scale-wrap" id="s2q7"><input type="radio" name="s2q7" id="s2q7-1" value="1"><label for="s2q7-1">1</label><input type="radio" name="s2q7" id="s2q7-2" value="2"><label for="s2q7-2">2</label><input type="radio" name="s2q7" id="s2q7-3" value="3"><label for="s2q7-3">3</label><input type="radio" name="s2q7" id="s2q7-4" value="4"><label for="s2q7-4">4</label><input type="radio" name="s2q7" id="s2q7-5" value="5"><label for="s2q7-5">5</label><input type="radio" name="s2q7" id="s2q7-6" value="6"><label for="s2q7-6">6</label><input type="radio" name="s2q7" id="s2q7-7" value="7"><label for="s2q7-7">7</label><input type="radio" name="s2q7" id="s2q7-8" value="8"><label for="s2q7-8">8</label><input type="radio" name="s2q7" id="s2q7-9" value="9"><label for="s2q7-9">9</label><input type="radio" name="s2q7" id="s2q7-10" value="10"><label for="s2q7-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q7" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">3.2.1</div><div class="q-title">Posicionamento Lateral ao Cliente</div><div class="q-desc">Priorização do posicionamento lateral ao cliente.</div><div class="scale-wrap" id="s2q8"><input type="radio" name="s2q8" id="s2q8-1" value="1"><label for="s2q8-1">1</label><input type="radio" name="s2q8" id="s2q8-2" value="2"><label for="s2q8-2">2</label><input type="radio" name="s2q8" id="s2q8-3" value="3"><label for="s2q8-3">3</label><input type="radio" name="s2q8" id="s2q8-4" value="4"><label for="s2q8-4">4</label><input type="radio" name="s2q8" id="s2q8-5" value="5"><label for="s2q8-5">5</label><input type="radio" name="s2q8" id="s2q8-6" value="6"><label for="s2q8-6">6</label><input type="radio" name="s2q8" id="s2q8-7" value="7"><label for="s2q8-7">7</label><input type="radio" name="s2q8" id="s2q8-8" value="8"><label for="s2q8-8">8</label><input type="radio" name="s2q8" id="s2q8-9" value="9"><label for="s2q8-9">9</label><input type="radio" name="s2q8" id="s2q8-10" value="10"><label for="s2q8-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q8" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">3.2.2</div><div class="q-title">Exclusão do Posicionamento por Trás do Cliente</div><div class="scale-wrap" id="s2q9"><input type="radio" name="s2q9" id="s2q9-1" value="1"><label for="s2q9-1">1</label><input type="radio" name="s2q9" id="s2q9-2" value="2"><label for="s2q9-2">2</label><input type="radio" name="s2q9" id="s2q9-3" value="3"><label for="s2q9-3">3</label><input type="radio" name="s2q9" id="s2q9-4" value="4"><label for="s2q9-4">4</label><input type="radio" name="s2q9" id="s2q9-5" value="5"><label for="s2q9-5">5</label><input type="radio" name="s2q9" id="s2q9-6" value="6"><label for="s2q9-6">6</label><input type="radio" name="s2q9" id="s2q9-7" value="7"><label for="s2q9-7">7</label><input type="radio" name="s2q9" id="s2q9-8" value="8"><label for="s2q9-8">8</label><input type="radio" name="s2q9" id="s2q9-9" value="9"><label for="s2q9-9">9</label><input type="radio" name="s2q9" id="s2q9-10" value="10"><label for="s2q9-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q9" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">3.2.3</div><div class="q-title">Orientação Verbal e Uso da Máquina</div><div class="q-desc">Utilização exclusiva da orientação verbal e auxílio por meio da própria máquina.</div><div class="scale-wrap" id="s2q10"><input type="radio" name="s2q10" id="s2q10-1" value="1"><label for="s2q10-1">1</label><input type="radio" name="s2q10" id="s2q10-2" value="2"><label for="s2q10-2">2</label><input type="radio" name="s2q10" id="s2q10-3" value="3"><label for="s2q10-3">3</label><input type="radio" name="s2q10" id="s2q10-4" value="4"><label for="s2q10-4">4</label><input type="radio" name="s2q10" id="s2q10-5" value="5"><label for="s2q10-5">5</label><input type="radio" name="s2q10" id="s2q10-6" value="6"><label for="s2q10-6">6</label><input type="radio" name="s2q10" id="s2q10-7" value="7"><label for="s2q10-7">7</label><input type="radio" name="s2q10" id="s2q10-8" value="8"><label for="s2q10-8">8</label><input type="radio" name="s2q10" id="s2q10-9" value="9"><label for="s2q10-9">9</label><input type="radio" name="s2q10" id="s2q10-10" value="10"><label for="s2q10-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q10" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">4.0</div><div class="q-title">Comunicação</div><div class="q-desc">Clareza na transmissão das informações, escuta ativa e adequação da linguagem ao perfil do cliente.</div><div class="scale-wrap" id="s2q11"><input type="radio" name="s2q11" id="s2q11-1" value="1"><label for="s2q11-1">1</label><input type="radio" name="s2q11" id="s2q11-2" value="2"><label for="s2q11-2">2</label><input type="radio" name="s2q11" id="s2q11-3" value="3"><label for="s2q11-3">3</label><input type="radio" name="s2q11" id="s2q11-4" value="4"><label for="s2q11-4">4</label><input type="radio" name="s2q11" id="s2q11-5" value="5"><label for="s2q11-5">5</label><input type="radio" name="s2q11" id="s2q11-6" value="6"><label for="s2q11-6">6</label><input type="radio" name="s2q11" id="s2q11-7" value="7"><label for="s2q11-7">7</label><input type="radio" name="s2q11" id="s2q11-8" value="8"><label for="s2q11-8">8</label><input type="radio" name="s2q11" id="s2q11-9" value="9"><label for="s2q11-9">9</label><input type="radio" name="s2q11" id="s2q11-10" value="10"><label for="s2q11-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q11" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">5.1.1</div><div class="q-title">Vínculo Profissional com o Cliente</div><div class="q-desc">Criar vínculo pessoal, amizade íntima ou qualquer relação que ultrapasse o ambiente profissional.</div><div class="scale-wrap" id="s2q12"><input type="radio" name="s2q12" id="s2q12-1" value="1"><label for="s2q12-1">1</label><input type="radio" name="s2q12" id="s2q12-2" value="2"><label for="s2q12-2">2</label><input type="radio" name="s2q12" id="s2q12-3" value="3"><label for="s2q12-3">3</label><input type="radio" name="s2q12" id="s2q12-4" value="4"><label for="s2q12-4">4</label><input type="radio" name="s2q12" id="s2q12-5" value="5"><label for="s2q12-5">5</label><input type="radio" name="s2q12" id="s2q12-6" value="6"><label for="s2q12-6">6</label><input type="radio" name="s2q12" id="s2q12-7" value="7"><label for="s2q12-7">7</label><input type="radio" name="s2q12" id="s2q12-8" value="8"><label for="s2q12-8">8</label><input type="radio" name="s2q12" id="s2q12-9" value="9"><label for="s2q12-9">9</label><input type="radio" name="s2q12" id="s2q12-10" value="10"><label for="s2q12-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q12" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">5.1.2</div><div class="q-title">Contato por Canais Oficiais</div><div class="q-desc">Trocar número de WhatsApp pessoal ou manter contato fora dos canais oficiais da MY BEST.</div><div class="scale-wrap" id="s2q13"><input type="radio" name="s2q13" id="s2q13-1" value="1"><label for="s2q13-1">1</label><input type="radio" name="s2q13" id="s2q13-2" value="2"><label for="s2q13-2">2</label><input type="radio" name="s2q13" id="s2q13-3" value="3"><label for="s2q13-3">3</label><input type="radio" name="s2q13" id="s2q13-4" value="4"><label for="s2q13-4">4</label><input type="radio" name="s2q13" id="s2q13-5" value="5"><label for="s2q13-5">5</label><input type="radio" name="s2q13" id="s2q13-6" value="6"><label for="s2q13-6">6</label><input type="radio" name="s2q13" id="s2q13-7" value="7"><label for="s2q13-7">7</label><input type="radio" name="s2q13" id="s2q13-8" value="8"><label for="s2q13-8">8</label><input type="radio" name="s2q13" id="s2q13-9" value="9"><label for="s2q13-9">9</label><input type="radio" name="s2q13" id="s2q13-10" value="10"><label for="s2q13-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q13" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">5.1.3</div><div class="q-title">Redes Sociais Pessoais</div><div class="q-desc">Seguir, ser seguido ou interagir com clientes por meio de redes sociais pessoais.</div><div class="scale-wrap" id="s2q14"><input type="radio" name="s2q14" id="s2q14-1" value="1"><label for="s2q14-1">1</label><input type="radio" name="s2q14" id="s2q14-2" value="2"><label for="s2q14-2">2</label><input type="radio" name="s2q14" id="s2q14-3" value="3"><label for="s2q14-3">3</label><input type="radio" name="s2q14" id="s2q14-4" value="4"><label for="s2q14-4">4</label><input type="radio" name="s2q14" id="s2q14-5" value="5"><label for="s2q14-5">5</label><input type="radio" name="s2q14" id="s2q14-6" value="6"><label for="s2q14-6">6</label><input type="radio" name="s2q14" id="s2q14-7" value="7"><label for="s2q14-7">7</label><input type="radio" name="s2q14" id="s2q14-8" value="8"><label for="s2q14-8">8</label><input type="radio" name="s2q14" id="s2q14-9" value="9"><label for="s2q14-9">9</label><input type="radio" name="s2q14" id="s2q14-10" value="10"><label for="s2q14-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q14" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">5.1.4</div><div class="q-title">Compartilhamento de Experiências Pessoais</div><div class="q-desc">Compartilhar experiências pessoais íntimas.</div><div class="scale-wrap" id="s2q15"><input type="radio" name="s2q15" id="s2q15-1" value="1"><label for="s2q15-1">1</label><input type="radio" name="s2q15" id="s2q15-2" value="2"><label for="s2q15-2">2</label><input type="radio" name="s2q15" id="s2q15-3" value="3"><label for="s2q15-3">3</label><input type="radio" name="s2q15" id="s2q15-4" value="4"><label for="s2q15-4">4</label><input type="radio" name="s2q15" id="s2q15-5" value="5"><label for="s2q15-5">5</label><input type="radio" name="s2q15" id="s2q15-6" value="6"><label for="s2q15-6">6</label><input type="radio" name="s2q15" id="s2q15-7" value="7"><label for="s2q15-7">7</label><input type="radio" name="s2q15" id="s2q15-8" value="8"><label for="s2q15-8">8</label><input type="radio" name="s2q15" id="s2q15-9" value="9"><label for="s2q15-9">9</label><input type="radio" name="s2q15" id="s2q15-10" value="10"><label for="s2q15-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q15" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">5.2.1</div><div class="q-title">Linguagem e Tratamento Formal</div><div class="q-desc">Utilizar diminutivos, apelidos ou qualquer forma de tratamento que comprometa a formalidade na relação profissional.</div><div class="scale-wrap" id="s2q16"><input type="radio" name="s2q16" id="s2q16-1" value="1"><label for="s2q16-1">1</label><input type="radio" name="s2q16" id="s2q16-2" value="2"><label for="s2q16-2">2</label><input type="radio" name="s2q16" id="s2q16-3" value="3"><label for="s2q16-3">3</label><input type="radio" name="s2q16" id="s2q16-4" value="4"><label for="s2q16-4">4</label><input type="radio" name="s2q16" id="s2q16-5" value="5"><label for="s2q16-5">5</label><input type="radio" name="s2q16" id="s2q16-6" value="6"><label for="s2q16-6">6</label><input type="radio" name="s2q16" id="s2q16-7" value="7"><label for="s2q16-7">7</label><input type="radio" name="s2q16" id="s2q16-8" value="8"><label for="s2q16-8">8</label><input type="radio" name="s2q16" id="s2q16-9" value="9"><label for="s2q16-9">9</label><input type="radio" name="s2q16" id="s2q16-10" value="10"><label for="s2q16-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q16" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">5.2.2</div><div class="q-title">Comentários Inadequados</div><div class="q-desc">Manifestar comentários, brincadeiras ou insinuações de cunho sexual, pejorativo ou constrangedor.</div><div class="scale-wrap" id="s2q17"><input type="radio" name="s2q17" id="s2q17-1" value="1"><label for="s2q17-1">1</label><input type="radio" name="s2q17" id="s2q17-2" value="2"><label for="s2q17-2">2</label><input type="radio" name="s2q17" id="s2q17-3" value="3"><label for="s2q17-3">3</label><input type="radio" name="s2q17" id="s2q17-4" value="4"><label for="s2q17-4">4</label><input type="radio" name="s2q17" id="s2q17-5" value="5"><label for="s2q17-5">5</label><input type="radio" name="s2q17" id="s2q17-6" value="6"><label for="s2q17-6">6</label><input type="radio" name="s2q17" id="s2q17-7" value="7"><label for="s2q17-7">7</label><input type="radio" name="s2q17" id="s2q17-8" value="8"><label for="s2q17-8">8</label><input type="radio" name="s2q17" id="s2q17-9" value="9"><label for="s2q17-9">9</label><input type="radio" name="s2q17" id="s2q17-10" value="10"><label for="s2q17-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q17" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">5.2.3</div><div class="q-title">Opiniões sobre Corpo e Estética</div><div class="q-desc">Emitir opiniões ou julgamentos sobre corpo, estética ou vida pessoal do cliente.</div><div class="scale-wrap" id="s2q18"><input type="radio" name="s2q18" id="s2q18-1" value="1"><label for="s2q18-1">1</label><input type="radio" name="s2q18" id="s2q18-2" value="2"><label for="s2q18-2">2</label><input type="radio" name="s2q18" id="s2q18-3" value="3"><label for="s2q18-3">3</label><input type="radio" name="s2q18" id="s2q18-4" value="4"><label for="s2q18-4">4</label><input type="radio" name="s2q18" id="s2q18-5" value="5"><label for="s2q18-5">5</label><input type="radio" name="s2q18" id="s2q18-6" value="6"><label for="s2q18-6">6</label><input type="radio" name="s2q18" id="s2q18-7" value="7"><label for="s2q18-7">7</label><input type="radio" name="s2q18" id="s2q18-8" value="8"><label for="s2q18-8">8</label><input type="radio" name="s2q18" id="s2q18-9" value="9"><label for="s2q18-9">9</label><input type="radio" name="s2q18" id="s2q18-10" value="10"><label for="s2q18-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q18" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">5.2.4</div><div class="q-title">Postura Informal</div><div class="q-desc">Adotar postura informal que possa comprometer a autoridade e a credibilidade profissional.</div><div class="scale-wrap" id="s2q19"><input type="radio" name="s2q19" id="s2q19-1" value="1"><label for="s2q19-1">1</label><input type="radio" name="s2q19" id="s2q19-2" value="2"><label for="s2q19-2">2</label><input type="radio" name="s2q19" id="s2q19-3" value="3"><label for="s2q19-3">3</label><input type="radio" name="s2q19" id="s2q19-4" value="4"><label for="s2q19-4">4</label><input type="radio" name="s2q19" id="s2q19-5" value="5"><label for="s2q19-5">5</label><input type="radio" name="s2q19" id="s2q19-6" value="6"><label for="s2q19-6">6</label><input type="radio" name="s2q19" id="s2q19-7" value="7"><label for="s2q19-7">7</label><input type="radio" name="s2q19" id="s2q19-8" value="8"><label for="s2q19-8">8</label><input type="radio" name="s2q19" id="s2q19-9" value="9"><label for="s2q19-9">9</label><input type="radio" name="s2q19" id="s2q19-10" value="10"><label for="s2q19-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q19" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">5.3.1</div><div class="q-title">Captação de Imagens do Cliente</div><div class="q-desc">Captar ou divulgar imagens de clientes sem consentimento formal, expresso e prévio.</div><div class="scale-wrap" id="s2q20"><input type="radio" name="s2q20" id="s2q20-1" value="1"><label for="s2q20-1">1</label><input type="radio" name="s2q20" id="s2q20-2" value="2"><label for="s2q20-2">2</label><input type="radio" name="s2q20" id="s2q20-3" value="3"><label for="s2q20-3">3</label><input type="radio" name="s2q20" id="s2q20-4" value="4"><label for="s2q20-4">4</label><input type="radio" name="s2q20" id="s2q20-5" value="5"><label for="s2q20-5">5</label><input type="radio" name="s2q20" id="s2q20-6" value="6"><label for="s2q20-6">6</label><input type="radio" name="s2q20" id="s2q20-7" value="7"><label for="s2q20-7">7</label><input type="radio" name="s2q20" id="s2q20-8" value="8"><label for="s2q20-8">8</label><input type="radio" name="s2q20" id="s2q20-9" value="9"><label for="s2q20-9">9</label><input type="radio" name="s2q20" id="s2q20-10" value="10"><label for="s2q20-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q20" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">5.3.2</div><div class="q-title">Informações Estratégicas da MY BEST</div><div class="q-desc">Compartilhar informações internas ou estratégicas da MY BEST com clientes.</div><div class="scale-wrap" id="s2q21"><input type="radio" name="s2q21" id="s2q21-1" value="1"><label for="s2q21-1">1</label><input type="radio" name="s2q21" id="s2q21-2" value="2"><label for="s2q21-2">2</label><input type="radio" name="s2q21" id="s2q21-3" value="3"><label for="s2q21-3">3</label><input type="radio" name="s2q21" id="s2q21-4" value="4"><label for="s2q21-4">4</label><input type="radio" name="s2q21" id="s2q21-5" value="5"><label for="s2q21-5">5</label><input type="radio" name="s2q21" id="s2q21-6" value="6"><label for="s2q21-6">6</label><input type="radio" name="s2q21" id="s2q21-7" value="7"><label for="s2q21-7">7</label><input type="radio" name="s2q21" id="s2q21-8" value="8"><label for="s2q21-8">8</label><input type="radio" name="s2q21" id="s2q21-9" value="9"><label for="s2q21-9">9</label><input type="radio" name="s2q21" id="s2q21-10" value="10"><label for="s2q21-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q21" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">5.3.3</div><div class="q-title">Exposição da Vida Pessoal</div><div class="q-desc">Expor vida pessoal íntima nas dependências da empresa ou durante o horário de trabalho.</div><div class="scale-wrap" id="s2q22"><input type="radio" name="s2q22" id="s2q22-1" value="1"><label for="s2q22-1">1</label><input type="radio" name="s2q22" id="s2q22-2" value="2"><label for="s2q22-2">2</label><input type="radio" name="s2q22" id="s2q22-3" value="3"><label for="s2q22-3">3</label><input type="radio" name="s2q22" id="s2q22-4" value="4"><label for="s2q22-4">4</label><input type="radio" name="s2q22" id="s2q22-5" value="5"><label for="s2q22-5">5</label><input type="radio" name="s2q22" id="s2q22-6" value="6"><label for="s2q22-6">6</label><input type="radio" name="s2q22" id="s2q22-7" value="7"><label for="s2q22-7">7</label><input type="radio" name="s2q22" id="s2q22-8" value="8"><label for="s2q22-8">8</label><input type="radio" name="s2q22" id="s2q22-9" value="9"><label for="s2q22-9">9</label><input type="radio" name="s2q22" id="s2q22-10" value="10"><label for="s2q22-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q22" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">5.4.1</div><div class="q-title">Encontros Externos com Clientes</div><div class="q-desc">Convidar clientes para encontros, eventos sociais ou atividades externas de caráter pessoal.</div><div class="scale-wrap" id="s2q23"><input type="radio" name="s2q23" id="s2q23-1" value="1"><label for="s2q23-1">1</label><input type="radio" name="s2q23" id="s2q23-2" value="2"><label for="s2q23-2">2</label><input type="radio" name="s2q23" id="s2q23-3" value="3"><label for="s2q23-3">3</label><input type="radio" name="s2q23" id="s2q23-4" value="4"><label for="s2q23-4">4</label><input type="radio" name="s2q23" id="s2q23-5" value="5"><label for="s2q23-5">5</label><input type="radio" name="s2q23" id="s2q23-6" value="6"><label for="s2q23-6">6</label><input type="radio" name="s2q23" id="s2q23-7" value="7"><label for="s2q23-7">7</label><input type="radio" name="s2q23" id="s2q23-8" value="8"><label for="s2q23-8">8</label><input type="radio" name="s2q23" id="s2q23-9" value="9"><label for="s2q23-9">9</label><input type="radio" name="s2q23" id="s2q23-10" value="10"><label for="s2q23-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q23" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">5.4.2</div><div class="q-title">Captação para Serviços Externos</div><div class="q-desc">Captar clientes da MY BEST para prestação de serviços externos, paralelos ou concorrentes.</div><div class="scale-wrap" id="s2q24"><input type="radio" name="s2q24" id="s2q24-1" value="1"><label for="s2q24-1">1</label><input type="radio" name="s2q24" id="s2q24-2" value="2"><label for="s2q24-2">2</label><input type="radio" name="s2q24" id="s2q24-3" value="3"><label for="s2q24-3">3</label><input type="radio" name="s2q24" id="s2q24-4" value="4"><label for="s2q24-4">4</label><input type="radio" name="s2q24" id="s2q24-5" value="5"><label for="s2q24-5">5</label><input type="radio" name="s2q24" id="s2q24-6" value="6"><label for="s2q24-6">6</label><input type="radio" name="s2q24" id="s2q24-7" value="7"><label for="s2q24-7">7</label><input type="radio" name="s2q24" id="s2q24-8" value="8"><label for="s2q24-8">8</label><input type="radio" name="s2q24" id="s2q24-9" value="9"><label for="s2q24-9">9</label><input type="radio" name="s2q24" id="s2q24-10" value="10"><label for="s2q24-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q24" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">6.1</div><div class="q-title">Da Responsabilidade</div><div class="q-desc">Cumprimento de tarefas e compromissos assumidos.</div><div class="scale-wrap" id="s2q25"><input type="radio" name="s2q25" id="s2q25-1" value="1"><label for="s2q25-1">1</label><input type="radio" name="s2q25" id="s2q25-2" value="2"><label for="s2q25-2">2</label><input type="radio" name="s2q25" id="s2q25-3" value="3"><label for="s2q25-3">3</label><input type="radio" name="s2q25" id="s2q25-4" value="4"><label for="s2q25-4">4</label><input type="radio" name="s2q25" id="s2q25-5" value="5"><label for="s2q25-5">5</label><input type="radio" name="s2q25" id="s2q25-6" value="6"><label for="s2q25-6">6</label><input type="radio" name="s2q25" id="s2q25-7" value="7"><label for="s2q25-7">7</label><input type="radio" name="s2q25" id="s2q25-8" value="8"><label for="s2q25-8">8</label><input type="radio" name="s2q25" id="s2q25-9" value="9"><label for="s2q25-9">9</label><input type="radio" name="s2q25" id="s2q25-10" value="10"><label for="s2q25-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q25" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">6.2</div><div class="q-title">Do Trabalho em Equipe</div><div class="q-desc">Colaboração, parceria e espírito coletivo.</div><div class="scale-wrap" id="s2q26"><input type="radio" name="s2q26" id="s2q26-1" value="1"><label for="s2q26-1">1</label><input type="radio" name="s2q26" id="s2q26-2" value="2"><label for="s2q26-2">2</label><input type="radio" name="s2q26" id="s2q26-3" value="3"><label for="s2q26-3">3</label><input type="radio" name="s2q26" id="s2q26-4" value="4"><label for="s2q26-4">4</label><input type="radio" name="s2q26" id="s2q26-5" value="5"><label for="s2q26-5">5</label><input type="radio" name="s2q26" id="s2q26-6" value="6"><label for="s2q26-6">6</label><input type="radio" name="s2q26" id="s2q26-7" value="7"><label for="s2q26-7">7</label><input type="radio" name="s2q26" id="s2q26-8" value="8"><label for="s2q26-8">8</label><input type="radio" name="s2q26" id="s2q26-9" value="9"><label for="s2q26-9">9</label><input type="radio" name="s2q26" id="s2q26-10" value="10"><label for="s2q26-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q26" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">6.3</div><div class="q-title">Início do Treinamento</div><div class="q-desc">Preparação, acolhimento e orientação inicial ao cliente.</div><div class="scale-wrap" id="s2q27"><input type="radio" name="s2q27" id="s2q27-1" value="1"><label for="s2q27-1">1</label><input type="radio" name="s2q27" id="s2q27-2" value="2"><label for="s2q27-2">2</label><input type="radio" name="s2q27" id="s2q27-3" value="3"><label for="s2q27-3">3</label><input type="radio" name="s2q27" id="s2q27-4" value="4"><label for="s2q27-4">4</label><input type="radio" name="s2q27" id="s2q27-5" value="5"><label for="s2q27-5">5</label><input type="radio" name="s2q27" id="s2q27-6" value="6"><label for="s2q27-6">6</label><input type="radio" name="s2q27" id="s2q27-7" value="7"><label for="s2q27-7">7</label><input type="radio" name="s2q27" id="s2q27-8" value="8"><label for="s2q27-8">8</label><input type="radio" name="s2q27" id="s2q27-9" value="9"><label for="s2q27-9">9</label><input type="radio" name="s2q27" id="s2q27-10" value="10"><label for="s2q27-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q27" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">6.4</div><div class="q-title">Periodização do Treinamento</div><div class="q-desc">Organização e planejamento das fases do treino.</div><div class="scale-wrap" id="s2q28"><input type="radio" name="s2q28" id="s2q28-1" value="1"><label for="s2q28-1">1</label><input type="radio" name="s2q28" id="s2q28-2" value="2"><label for="s2q28-2">2</label><input type="radio" name="s2q28" id="s2q28-3" value="3"><label for="s2q28-3">3</label><input type="radio" name="s2q28" id="s2q28-4" value="4"><label for="s2q28-4">4</label><input type="radio" name="s2q28" id="s2q28-5" value="5"><label for="s2q28-5">5</label><input type="radio" name="s2q28" id="s2q28-6" value="6"><label for="s2q28-6">6</label><input type="radio" name="s2q28" id="s2q28-7" value="7"><label for="s2q28-7">7</label><input type="radio" name="s2q28" id="s2q28-8" value="8"><label for="s2q28-8">8</label><input type="radio" name="s2q28" id="s2q28-9" value="9"><label for="s2q28-9">9</label><input type="radio" name="s2q28" id="s2q28-10" value="10"><label for="s2q28-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q28" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">6.5</div><div class="q-title">Estrutura do Treinamento</div><div class="q-desc">Clareza, sequência lógica e coerência no treino proposto.</div><div class="scale-wrap" id="s2q29"><input type="radio" name="s2q29" id="s2q29-1" value="1"><label for="s2q29-1">1</label><input type="radio" name="s2q29" id="s2q29-2" value="2"><label for="s2q29-2">2</label><input type="radio" name="s2q29" id="s2q29-3" value="3"><label for="s2q29-3">3</label><input type="radio" name="s2q29" id="s2q29-4" value="4"><label for="s2q29-4">4</label><input type="radio" name="s2q29" id="s2q29-5" value="5"><label for="s2q29-5">5</label><input type="radio" name="s2q29" id="s2q29-6" value="6"><label for="s2q29-6">6</label><input type="radio" name="s2q29" id="s2q29-7" value="7"><label for="s2q29-7">7</label><input type="radio" name="s2q29" id="s2q29-8" value="8"><label for="s2q29-8">8</label><input type="radio" name="s2q29" id="s2q29-9" value="9"><label for="s2q29-9">9</label><input type="radio" name="s2q29" id="s2q29-10" value="10"><label for="s2q29-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q29" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">6.6</div><div class="q-title">Banca de Exercícios</div><div class="q-desc">Diversificação, escolha e adaptação dos exercícios ao cliente.</div><div class="scale-wrap" id="s2q30"><input type="radio" name="s2q30" id="s2q30-1" value="1"><label for="s2q30-1">1</label><input type="radio" name="s2q30" id="s2q30-2" value="2"><label for="s2q30-2">2</label><input type="radio" name="s2q30" id="s2q30-3" value="3"><label for="s2q30-3">3</label><input type="radio" name="s2q30" id="s2q30-4" value="4"><label for="s2q30-4">4</label><input type="radio" name="s2q30" id="s2q30-5" value="5"><label for="s2q30-5">5</label><input type="radio" name="s2q30" id="s2q30-6" value="6"><label for="s2q30-6">6</label><input type="radio" name="s2q30" id="s2q30-7" value="7"><label for="s2q30-7">7</label><input type="radio" name="s2q30" id="s2q30-8" value="8"><label for="s2q30-8">8</label><input type="radio" name="s2q30" id="s2q30-9" value="9"><label for="s2q30-9">9</label><input type="radio" name="s2q30" id="s2q30-10" value="10"><label for="s2q30-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q30" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">6.7.1</div><div class="q-title">Revezamento de Máquinas</div><div class="q-desc">Sobre não utilizar o revezamento de máquinas ou descanso ativo ao lado delas.</div><div class="scale-wrap" id="s2q31"><input type="radio" name="s2q31" id="s2q31-1" value="1"><label for="s2q31-1">1</label><input type="radio" name="s2q31" id="s2q31-2" value="2"><label for="s2q31-2">2</label><input type="radio" name="s2q31" id="s2q31-3" value="3"><label for="s2q31-3">3</label><input type="radio" name="s2q31" id="s2q31-4" value="4"><label for="s2q31-4">4</label><input type="radio" name="s2q31" id="s2q31-5" value="5"><label for="s2q31-5">5</label><input type="radio" name="s2q31" id="s2q31-6" value="6"><label for="s2q31-6">6</label><input type="radio" name="s2q31" id="s2q31-7" value="7"><label for="s2q31-7">7</label><input type="radio" name="s2q31" id="s2q31-8" value="8"><label for="s2q31-8">8</label><input type="radio" name="s2q31" id="s2q31-9" value="9"><label for="s2q31-9">9</label><input type="radio" name="s2q31" id="s2q31-10" value="10"><label for="s2q31-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q31" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">6.7.2</div><div class="q-title">Espaço de Circulação</div><div class="q-desc">Preservar o espaço de circulação livre para os clientes e equipe técnica.</div><div class="scale-wrap" id="s2q32"><input type="radio" name="s2q32" id="s2q32-1" value="1"><label for="s2q32-1">1</label><input type="radio" name="s2q32" id="s2q32-2" value="2"><label for="s2q32-2">2</label><input type="radio" name="s2q32" id="s2q32-3" value="3"><label for="s2q32-3">3</label><input type="radio" name="s2q32" id="s2q32-4" value="4"><label for="s2q32-4">4</label><input type="radio" name="s2q32" id="s2q32-5" value="5"><label for="s2q32-5">5</label><input type="radio" name="s2q32" id="s2q32-6" value="6"><label for="s2q32-6">6</label><input type="radio" name="s2q32" id="s2q32-7" value="7"><label for="s2q32-7">7</label><input type="radio" name="s2q32" id="s2q32-8" value="8"><label for="s2q32-8">8</label><input type="radio" name="s2q32" id="s2q32-9" value="9"><label for="s2q32-9">9</label><input type="radio" name="s2q32" id="s2q32-10" value="10"><label for="s2q32-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q32" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">6.7.3</div><div class="q-title">Uso Simultâneo de Espaços</div><div class="q-desc">Sobre não utilizar dois espaços simultaneamente para um único cliente.</div><div class="scale-wrap" id="s2q33"><input type="radio" name="s2q33" id="s2q33-1" value="1"><label for="s2q33-1">1</label><input type="radio" name="s2q33" id="s2q33-2" value="2"><label for="s2q33-2">2</label><input type="radio" name="s2q33" id="s2q33-3" value="3"><label for="s2q33-3">3</label><input type="radio" name="s2q33" id="s2q33-4" value="4"><label for="s2q33-4">4</label><input type="radio" name="s2q33" id="s2q33-5" value="5"><label for="s2q33-5">5</label><input type="radio" name="s2q33" id="s2q33-6" value="6"><label for="s2q33-6">6</label><input type="radio" name="s2q33" id="s2q33-7" value="7"><label for="s2q33-7">7</label><input type="radio" name="s2q33" id="s2q33-8" value="8"><label for="s2q33-8">8</label><input type="radio" name="s2q33" id="s2q33-9" value="9"><label for="s2q33-9">9</label><input type="radio" name="s2q33" id="s2q33-10" value="10"><label for="s2q33-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q33" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">6.8</div><div class="q-title">Presença Ativa Durante o Treino</div><div class="q-desc">Acompanhamento próximo, atento e contínuo do cliente.</div><div class="scale-wrap" id="s2q34"><input type="radio" name="s2q34" id="s2q34-1" value="1"><label for="s2q34-1">1</label><input type="radio" name="s2q34" id="s2q34-2" value="2"><label for="s2q34-2">2</label><input type="radio" name="s2q34" id="s2q34-3" value="3"><label for="s2q34-3">3</label><input type="radio" name="s2q34" id="s2q34-4" value="4"><label for="s2q34-4">4</label><input type="radio" name="s2q34" id="s2q34-5" value="5"><label for="s2q34-5">5</label><input type="radio" name="s2q34" id="s2q34-6" value="6"><label for="s2q34-6">6</label><input type="radio" name="s2q34" id="s2q34-7" value="7"><label for="s2q34-7">7</label><input type="radio" name="s2q34" id="s2q34-8" value="8"><label for="s2q34-8">8</label><input type="radio" name="s2q34" id="s2q34-9" value="9"><label for="s2q34-9">9</label><input type="radio" name="s2q34" id="s2q34-10" value="10"><label for="s2q34-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q34" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">6.9</div><div class="q-title">Demonstração de Exercícios</div><div class="q-desc">Clareza, técnica correta e segurança na demonstração.</div><div class="scale-wrap" id="s2q35"><input type="radio" name="s2q35" id="s2q35-1" value="1"><label for="s2q35-1">1</label><input type="radio" name="s2q35" id="s2q35-2" value="2"><label for="s2q35-2">2</label><input type="radio" name="s2q35" id="s2q35-3" value="3"><label for="s2q35-3">3</label><input type="radio" name="s2q35" id="s2q35-4" value="4"><label for="s2q35-4">4</label><input type="radio" name="s2q35" id="s2q35-5" value="5"><label for="s2q35-5">5</label><input type="radio" name="s2q35" id="s2q35-6" value="6"><label for="s2q35-6">6</label><input type="radio" name="s2q35" id="s2q35-7" value="7"><label for="s2q35-7">7</label><input type="radio" name="s2q35" id="s2q35-8" value="8"><label for="s2q35-8">8</label><input type="radio" name="s2q35" id="s2q35-9" value="9"><label for="s2q35-9">9</label><input type="radio" name="s2q35" id="s2q35-10" value="10"><label for="s2q35-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q35" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">6.10</div><div class="q-title">Da Execução dos Exercícios</div><div class="scale-wrap" id="s2q36"><input type="radio" name="s2q36" id="s2q36-1" value="1"><label for="s2q36-1">1</label><input type="radio" name="s2q36" id="s2q36-2" value="2"><label for="s2q36-2">2</label><input type="radio" name="s2q36" id="s2q36-3" value="3"><label for="s2q36-3">3</label><input type="radio" name="s2q36" id="s2q36-4" value="4"><label for="s2q36-4">4</label><input type="radio" name="s2q36" id="s2q36-5" value="5"><label for="s2q36-5">5</label><input type="radio" name="s2q36" id="s2q36-6" value="6"><label for="s2q36-6">6</label><input type="radio" name="s2q36" id="s2q36-7" value="7"><label for="s2q36-7">7</label><input type="radio" name="s2q36" id="s2q36-8" value="8"><label for="s2q36-8">8</label><input type="radio" name="s2q36" id="s2q36-9" value="9"><label for="s2q36-9">9</label><input type="radio" name="s2q36" id="s2q36-10" value="10"><label for="s2q36-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q36" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">6.11</div><div class="q-title">Manuseio dos Equipamentos</div><div class="q-desc">Manuseio de uso exclusivo pelo professor.</div><div class="scale-wrap" id="s2q37"><input type="radio" name="s2q37" id="s2q37-1" value="1"><label for="s2q37-1">1</label><input type="radio" name="s2q37" id="s2q37-2" value="2"><label for="s2q37-2">2</label><input type="radio" name="s2q37" id="s2q37-3" value="3"><label for="s2q37-3">3</label><input type="radio" name="s2q37" id="s2q37-4" value="4"><label for="s2q37-4">4</label><input type="radio" name="s2q37" id="s2q37-5" value="5"><label for="s2q37-5">5</label><input type="radio" name="s2q37" id="s2q37-6" value="6"><label for="s2q37-6">6</label><input type="radio" name="s2q37" id="s2q37-7" value="7"><label for="s2q37-7">7</label><input type="radio" name="s2q37" id="s2q37-8" value="8"><label for="s2q37-8">8</label><input type="radio" name="s2q37" id="s2q37-9" value="9"><label for="s2q37-9">9</label><input type="radio" name="s2q37" id="s2q37-10" value="10"><label for="s2q37-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q37" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">6.12</div><div class="q-title">Organização dos Equipamentos</div><div class="q-desc">Garantir a ordem do ambiente.</div><div class="scale-wrap" id="s2q38"><input type="radio" name="s2q38" id="s2q38-1" value="1"><label for="s2q38-1">1</label><input type="radio" name="s2q38" id="s2q38-2" value="2"><label for="s2q38-2">2</label><input type="radio" name="s2q38" id="s2q38-3" value="3"><label for="s2q38-3">3</label><input type="radio" name="s2q38" id="s2q38-4" value="4"><label for="s2q38-4">4</label><input type="radio" name="s2q38" id="s2q38-5" value="5"><label for="s2q38-5">5</label><input type="radio" name="s2q38" id="s2q38-6" value="6"><label for="s2q38-6">6</label><input type="radio" name="s2q38" id="s2q38-7" value="7"><label for="s2q38-7">7</label><input type="radio" name="s2q38" id="s2q38-8" value="8"><label for="s2q38-8">8</label><input type="radio" name="s2q38" id="s2q38-9" value="9"><label for="s2q38-9">9</label><input type="radio" name="s2q38" id="s2q38-10" value="10"><label for="s2q38-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q38" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">6.13</div><div class="q-title">Encerramento com Cordialidade</div><div class="scale-wrap" id="s2q39"><input type="radio" name="s2q39" id="s2q39-1" value="1"><label for="s2q39-1">1</label><input type="radio" name="s2q39" id="s2q39-2" value="2"><label for="s2q39-2">2</label><input type="radio" name="s2q39" id="s2q39-3" value="3"><label for="s2q39-3">3</label><input type="radio" name="s2q39" id="s2q39-4" value="4"><label for="s2q39-4">4</label><input type="radio" name="s2q39" id="s2q39-5" value="5"><label for="s2q39-5">5</label><input type="radio" name="s2q39" id="s2q39-6" value="6"><label for="s2q39-6">6</label><input type="radio" name="s2q39" id="s2q39-7" value="7"><label for="s2q39-7">7</label><input type="radio" name="s2q39" id="s2q39-8" value="8"><label for="s2q39-8">8</label><input type="radio" name="s2q39" id="s2q39-9" value="9"><label for="s2q39-9">9</label><input type="radio" name="s2q39" id="s2q39-10" value="10"><label for="s2q39-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q39" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">7.1</div><div class="q-title">Planejamento do Treinamento</div><div class="q-desc">Elaboração do planejamento de forma assertiva e detalhada, de acordo com a metodologia e estrutura de planejamento.</div><div class="scale-wrap" id="s2q40"><input type="radio" name="s2q40" id="s2q40-1" value="1"><label for="s2q40-1">1</label><input type="radio" name="s2q40" id="s2q40-2" value="2"><label for="s2q40-2">2</label><input type="radio" name="s2q40" id="s2q40-3" value="3"><label for="s2q40-3">3</label><input type="radio" name="s2q40" id="s2q40-4" value="4"><label for="s2q40-4">4</label><input type="radio" name="s2q40" id="s2q40-5" value="5"><label for="s2q40-5">5</label><input type="radio" name="s2q40" id="s2q40-6" value="6"><label for="s2q40-6">6</label><input type="radio" name="s2q40" id="s2q40-7" value="7"><label for="s2q40-7">7</label><input type="radio" name="s2q40" id="s2q40-8" value="8"><label for="s2q40-8">8</label><input type="radio" name="s2q40" id="s2q40-9" value="9"><label for="s2q40-9">9</label><input type="radio" name="s2q40" id="s2q40-10" value="10"><label for="s2q40-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q40" placeholder="Adicione uma observação..."></textarea></div>
-
-    <div class="q-card"><div class="q-number">8.1</div><div class="q-title">PACTO Sistema — Avaliações</div><div class="q-desc">Registro e acompanhamento correto das avaliações no sistema.</div><div class="scale-wrap" id="s2q41"><input type="radio" name="s2q41" id="s2q41-1" value="1"><label for="s2q41-1">1</label><input type="radio" name="s2q41" id="s2q41-2" value="2"><label for="s2q41-2">2</label><input type="radio" name="s2q41" id="s2q41-3" value="3"><label for="s2q41-3">3</label><input type="radio" name="s2q41" id="s2q41-4" value="4"><label for="s2q41-4">4</label><input type="radio" name="s2q41" id="s2q41-5" value="5"><label for="s2q41-5">5</label><input type="radio" name="s2q41" id="s2q41-6" value="6"><label for="s2q41-6">6</label><input type="radio" name="s2q41" id="s2q41-7" value="7"><label for="s2q41-7">7</label><input type="radio" name="s2q41" id="s2q41-8" value="8"><label for="s2q41-8">8</label><input type="radio" name="s2q41" id="s2q41-9" value="9"><label for="s2q41-9">9</label><input type="radio" name="s2q41" id="s2q41-10" value="10"><label for="s2q41-10">10</label></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q41" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">1.0</div><div class="q-title">Apresentação</div><div class="q-desc">Como se apresenta tecnicamente diante do cliente e da equipe.</div><div class="scale-wrap" id="s2q1"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q1" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">2.3</div><div class="q-title">Posicionamento no Espaço Técnico</div><div class="q-desc">Posicionamento no espaço técnico e deixar o balcão livre para os auxiliares.</div><div class="scale-wrap" id="s2q2"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q2" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">2.4</div><div class="q-title">Prontidão para Recebimento do Cliente</div><div class="scale-wrap" id="s2q3"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q3" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">2.5</div><div class="q-title">Recebimento com Entusiasmo e Cordialidade</div><div class="q-desc">Recebimento do cliente com entusiasmo e cordialidade com aperto de mão.</div><div class="scale-wrap" id="s2q4"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q4" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">2.6</div><div class="q-title">Saudação Imediata ao Cliente</div><div class="q-desc">Recebimento e saudação do cliente imediatamente ao adentrar o espaço técnico.</div><div class="scale-wrap" id="s2q5"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q5" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">3.1.1</div><div class="q-title">Postura Corporal e Proatividade</div><div class="q-desc">Adoção de postura ativa, excluindo mãos na cintura e apoio nas máquinas, equipamentos ou paredes.</div><div class="scale-wrap" id="s2q6"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q6" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">3.1.2</div><div class="q-title">Proatividade e Visão 360°</div><div class="q-desc">Manter proatividade e visão generalizada de todo o espaço e dos clientes, com deslocamento constante.</div><div class="scale-wrap" id="s2q7"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q7" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">3.2.1</div><div class="q-title">Posicionamento Lateral ao Cliente</div><div class="q-desc">Priorização do posicionamento lateral ao cliente.</div><div class="scale-wrap" id="s2q8"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q8" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">3.2.2</div><div class="q-title">Exclusão do Posicionamento por Trás do Cliente</div><div class="scale-wrap" id="s2q9"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q9" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">3.2.3</div><div class="q-title">Orientação Verbal e Uso da Máquina</div><div class="q-desc">Utilização exclusiva da orientação verbal e auxílio por meio da própria máquina.</div><div class="scale-wrap" id="s2q10"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q10" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">4.0</div><div class="q-title">Comunicação</div><div class="q-desc">Clareza na transmissão das informações, escuta ativa e adequação da linguagem ao perfil do cliente.</div><div class="scale-wrap" id="s2q11"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q11" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">5.1.1</div><div class="q-title">Vínculo Profissional com o Cliente</div><div class="q-desc">Criar vínculo pessoal, amizade íntima ou qualquer relação que ultrapasse o ambiente profissional.</div><div class="scale-wrap" id="s2q12"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q12" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">5.1.2</div><div class="q-title">Contato por Canais Oficiais</div><div class="q-desc">Trocar número de WhatsApp pessoal ou manter contato fora dos canais oficiais da MY BEST.</div><div class="scale-wrap" id="s2q13"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q13" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">5.1.3</div><div class="q-title">Redes Sociais Pessoais</div><div class="q-desc">Seguir, ser seguido ou interagir com clientes por meio de redes sociais pessoais.</div><div class="scale-wrap" id="s2q14"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q14" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">5.1.4</div><div class="q-title">Compartilhamento de Experiências Pessoais</div><div class="q-desc">Compartilhar experiências pessoais íntimas.</div><div class="scale-wrap" id="s2q15"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q15" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">5.2.1</div><div class="q-title">Linguagem e Tratamento Formal</div><div class="q-desc">Utilizar diminutivos, apelidos ou qualquer forma de tratamento que comprometa a formalidade na relação profissional.</div><div class="scale-wrap" id="s2q16"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q16" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">5.2.2</div><div class="q-title">Comentários Inadequados</div><div class="q-desc">Manifestar comentários, brincadeiras ou insinuações de cunho sexual, pejorativo ou constrangedor.</div><div class="scale-wrap" id="s2q17"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q17" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">5.2.3</div><div class="q-title">Opiniões sobre Corpo e Estética</div><div class="q-desc">Emitir opiniões ou julgamentos sobre corpo, estética ou vida pessoal do cliente.</div><div class="scale-wrap" id="s2q18"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q18" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">5.2.4</div><div class="q-title">Postura Informal</div><div class="q-desc">Adotar postura informal que possa comprometer a autoridade e a credibilidade profissional.</div><div class="scale-wrap" id="s2q19"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q19" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">5.3.1</div><div class="q-title">Captação de Imagens do Cliente</div><div class="q-desc">Captar ou divulgar imagens de clientes sem consentimento formal, expresso e prévio.</div><div class="scale-wrap" id="s2q20"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q20" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">5.3.2</div><div class="q-title">Informações Estratégicas da MY BEST</div><div class="q-desc">Compartilhar informações internas ou estratégicas da MY BEST com clientes.</div><div class="scale-wrap" id="s2q21"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q21" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">5.3.3</div><div class="q-title">Exposição da Vida Pessoal</div><div class="q-desc">Expor vida pessoal íntima nas dependências da empresa ou durante o horário de trabalho.</div><div class="scale-wrap" id="s2q22"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q22" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">5.4.1</div><div class="q-title">Encontros Externos com Clientes</div><div class="q-desc">Convidar clientes para encontros, eventos sociais ou atividades externas de caráter pessoal.</div><div class="scale-wrap" id="s2q23"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q23" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">5.4.2</div><div class="q-title">Captação para Serviços Externos</div><div class="q-desc">Captar clientes da MY BEST para prestação de serviços externos, paralelos ou concorrentes.</div><div class="scale-wrap" id="s2q24"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q24" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">6.1</div><div class="q-title">Da Responsabilidade</div><div class="q-desc">Cumprimento de tarefas e compromissos assumidos.</div><div class="scale-wrap" id="s2q25"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q25" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">6.2</div><div class="q-title">Do Trabalho em Equipe</div><div class="q-desc">Colaboração, parceria e espírito coletivo.</div><div class="scale-wrap" id="s2q26"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q26" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">6.3</div><div class="q-title">Início do Treinamento</div><div class="q-desc">Preparação, acolhimento e orientação inicial ao cliente.</div><div class="scale-wrap" id="s2q27"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q27" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">6.4</div><div class="q-title">Periodização do Treinamento</div><div class="q-desc">Organização e planejamento das fases do treino.</div><div class="scale-wrap" id="s2q28"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q28" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">6.5</div><div class="q-title">Estrutura do Treinamento</div><div class="q-desc">Clareza, sequência lógica e coerência no treino proposto.</div><div class="scale-wrap" id="s2q29"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q29" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">6.6</div><div class="q-title">Banca de Exercícios</div><div class="q-desc">Diversificação, escolha e adaptação dos exercícios ao cliente.</div><div class="scale-wrap" id="s2q30"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q30" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">6.7.1</div><div class="q-title">Revezamento de Máquinas</div><div class="q-desc">Sobre não utilizar o revezamento de máquinas ou descanso ativo ao lado delas.</div><div class="scale-wrap" id="s2q31"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q31" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">6.7.2</div><div class="q-title">Espaço de Circulação</div><div class="q-desc">Preservar o espaço de circulação livre para os clientes e equipe técnica.</div><div class="scale-wrap" id="s2q32"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q32" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">6.7.3</div><div class="q-title">Uso Simultâneo de Espaços</div><div class="q-desc">Sobre não utilizar dois espaços simultaneamente para um único cliente.</div><div class="scale-wrap" id="s2q33"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q33" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">6.8</div><div class="q-title">Presença Ativa Durante o Treino</div><div class="q-desc">Acompanhamento próximo, atento e contínuo do cliente.</div><div class="scale-wrap" id="s2q34"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q34" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">6.9</div><div class="q-title">Demonstração de Exercícios</div><div class="q-desc">Clareza, técnica correta e segurança na demonstração.</div><div class="scale-wrap" id="s2q35"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q35" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">6.10</div><div class="q-title">Da Execução dos Exercícios</div><div class="scale-wrap" id="s2q36"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q36" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">6.11</div><div class="q-title">Manuseio dos Equipamentos</div><div class="q-desc">Manuseio de uso exclusivo pelo professor.</div><div class="scale-wrap" id="s2q37"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q37" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">6.12</div><div class="q-title">Organização dos Equipamentos</div><div class="q-desc">Garantir a ordem do ambiente.</div><div class="scale-wrap" id="s2q38"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q38" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">6.13</div><div class="q-title">Encerramento com Cordialidade</div><div class="scale-wrap" id="s2q39"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q39" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">7.1</div><div class="q-title">Planejamento do Treinamento</div><div class="q-desc">Elaboração do planejamento de forma assertiva e detalhada, de acordo com a metodologia e estrutura de planejamento.</div><div class="scale-wrap" id="s2q40"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q40" placeholder="Adicione uma observação..."></textarea></div>
+    <div class="q-card"><div class="q-number">8.1</div><div class="q-title">PACTO Sistema — Avaliações</div><div class="q-desc">Registro e acompanhamento correto das avaliações no sistema.</div><div class="scale-wrap" id="s2q41"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q41" placeholder="Adicione uma observação..."></textarea></div>
 
     <div class="submit-area">
-      <button type="submit" class="submit-btn" id="submitBtn">Enviar Autoavaliação</button>
-      <div class="submit-note">Suas respostas serão enviadas para <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2f42564d4a5c5b484a5c5b4e406f48424e4643014c4042">[email&#160;protected]</a></div>
-      <div class="msg success" id="msgSuccess">✓ Autoavaliação enviada com sucesso!</div>
-      <div class="msg error" id="msgError">✕ Erro ao enviar. Verifique sua conexão e tente novamente.</div>
+      <button type="submit" class="submit-btn" id="submitBtn">Enviar Autoavaliacao</button>
+      <div class="submit-note">Suas respostas serao enviadas para mybestgestao@gmail.com</div>
+      <div class="msg error" id="msgError">Erro ao enviar. Verifique sua conexao e tente novamente.</div>
     </div>
   </form>
 
   <div class="success-screen" id="successScreen">
-    <div class="success-check">✓</div>
-    <div class="success-title">Avaliação Enviada!</div>
-    <div class="success-sub">Obrigado por completar sua autoavaliação.<br>As respostas foram registradas e enviadas com sucesso.</div>
+    <div class="success-check">OK</div>
+    <div class="success-title">Avaliacao Enviada!</div>
+    <div class="success-sub">Obrigado por completar sua autoavaliacao.<br>As respostas foram registradas com sucesso.</div>
   </div>
 </div>
 
-<div class="footer">MY BEST_ · Autoavaliação de Colaboradores · Conteúdo Confidencial</div>
+<div class="footer">MY BEST_ · Autoavaliacao de Colaboradores · Conteudo Confidencial</div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const fieldNames = {
-    s1q1:'1.0 Apresentação Pessoal',s1q2:'2.0 Uso do Uniforme',s1q3:'3.0 Comunicação',
-    s1q4:'4.0 Receptividade',s1q5:'5.0 Organização e Limpeza',s1q6:'6.0 Das Refeições',
-    s1q7:'7.0 Uso do Telefone',s2q1:'1.0 Apresentação (Técnica)',s2q2:'2.3 Posicionamento no Espaço',
-    s2q3:'2.4 Prontidão para Recebimento',s2q4:'2.5 Entusiasmo e Cordialidade',
-    s2q5:'2.6 Saudação Imediata',s2q6:'3.1.1 Postura Corporal',s2q7:'3.1.2 Visão 360°',
-    s2q8:'3.2.1 Posicionamento Lateral',s2q9:'3.2.2 Exclusão Posicionamento por Trás',
-    s2q10:'3.2.3 Orientação Verbal',s2q11:'4.0 Comunicação (Técnica)',
-    s2q12:'5.1.1 Vínculo Profissional',s2q13:'5.1.2 Canais Oficiais',
-    s2q14:'5.1.3 Redes Sociais',s2q15:'5.1.4 Experiências Pessoais',
-    s2q16:'5.2.1 Linguagem Formal',s2q17:'5.2.2 Comentários Inadequados',
-    s2q18:'5.2.3 Opiniões sobre Corpo',s2q19:'5.2.4 Postura Informal',
-    s2q20:'5.3.1 Captação de Imagens',s2q21:'5.3.2 Informações Estratégicas',
-    s2q22:'5.3.3 Exposição Vida Pessoal',s2q23:'5.4.1 Encontros Externos',
-    s2q24:'5.4.2 Captação Serviços Externos',s2q25:'6.1 Responsabilidade',
-    s2q26:'6.2 Trabalho em Equipe',s2q27:'6.3 Início do Treinamento',
-    s2q28:'6.4 Periodização',s2q29:'6.5 Estrutura do Treinamento',
-    s2q30:'6.6 Banca de Exercícios',s2q31:'6.7.1 Revezamento de Máquinas',
-    s2q32:'6.7.2 Espaço de Circulação',s2q33:'6.7.3 Dois Espaços Simultâneos',
-    s2q34:'6.8 Presença Ativa',s2q35:'6.9 Demonstração de Exercícios',
-    s2q36:'6.10 Execução dos Exercícios',s2q37:'6.11 Manuseio dos Equipamentos',
-    s2q38:'6.12 Organização dos Equipamentos',s2q39:'6.13 Encerramento com Cordialidade',
-    s2q40:'7.1 Planejamento do Treinamento',s2q41:'8.1 PACTO Sistema – Avaliações'
-  };
+<script>
+var FIELD_NAMES = {
+  s1q1:'1.0 Apresentacao Pessoal',s1q2:'2.0 Uso do Uniforme',s1q3:'3.0 Comunicacao',
+  s1q4:'4.0 Receptividade',s1q5:'5.0 Organizacao e Limpeza',s1q6:'6.0 Das Refeicoes',
+  s1q7:'7.0 Uso do Telefone',s2q1:'1.0 Apresentacao Tecnica',s2q2:'2.3 Posicionamento no Espaco',
+  s2q3:'2.4 Prontidao para Recebimento',s2q4:'2.5 Entusiasmo e Cordialidade',
+  s2q5:'2.6 Saudacao Imediata',s2q6:'3.1.1 Postura Corporal',s2q7:'3.1.2 Visao 360',
+  s2q8:'3.2.1 Posicionamento Lateral',s2q9:'3.2.2 Exclusao por Tras',
+  s2q10:'3.2.3 Orientacao Verbal',s2q11:'4.0 Comunicacao Tecnica',
+  s2q12:'5.1.1 Vinculo Profissional',s2q13:'5.1.2 Canais Oficiais',
+  s2q14:'5.1.3 Redes Sociais',s2q15:'5.1.4 Experiencias Pessoais',
+  s2q16:'5.2.1 Linguagem Formal',s2q17:'5.2.2 Comentarios Inadequados',
+  s2q18:'5.2.3 Opinioes sobre Corpo',s2q19:'5.2.4 Postura Informal',
+  s2q20:'5.3.1 Captacao de Imagens',s2q21:'5.3.2 Informacoes Estrategicas',
+  s2q22:'5.3.3 Exposicao Vida Pessoal',s2q23:'5.4.1 Encontros Externos',
+  s2q24:'5.4.2 Captacao Servicos Externos',s2q25:'6.1 Responsabilidade',
+  s2q26:'6.2 Trabalho em Equipe',s2q27:'6.3 Inicio do Treinamento',
+  s2q28:'6.4 Periodizacao',s2q29:'6.5 Estrutura do Treinamento',
+  s2q30:'6.6 Banca de Exercicios',s2q31:'6.7.1 Revezamento de Maquinas',
+  s2q32:'6.7.2 Espaco de Circulacao',s2q33:'6.7.3 Dois Espacos Simultaneos',
+  s2q34:'6.8 Presenca Ativa',s2q35:'6.9 Demonstracao de Exercicios',
+  s2q36:'6.10 Execucao dos Exercicios',s2q37:'6.11 Manuseio dos Equipamentos',
+  s2q38:'6.12 Organizacao dos Equipamentos',s2q39:'6.13 Encerramento com Cordialidade',
+  s2q40:'7.1 Planejamento do Treinamento',s2q41:'8.1 PACTO Sistema Avaliacoes'
+};
 
-  // Gera radios
-  const scaleWraps = document.querySelectorAll('.scale-wrap[id]');
-  const total = scaleWraps.length;
-  scaleWraps.forEach(wrap => {
-    for (let i = 1; i <= 10; i++) {
-      const input = document.createElement('input');
-      input.type = 'radio'; input.name = wrap.id;
-      input.id = `${wrap.id}-${i}`; input.value = i;
-      const label = document.createElement('label');
-      label.htmlFor = `${wrap.id}-${i}`; label.textContent = i;
-      wrap.appendChild(input); wrap.appendChild(label);
-    }
+// Gera radios de 1 a 10
+var wraps = document.querySelectorAll('.scale-wrap[id]');
+var totalQ = wraps.length;
+for (var w = 0; w < wraps.length; w++) {
+  var wrap = wraps[w];
+  var qid = wrap.id;
+  for (var n = 1; n <= 10; n++) {
+    var inp = document.createElement('input');
+    inp.type = 'radio'; inp.name = qid; inp.id = qid + '-' + n; inp.value = n;
+    var lbl = document.createElement('label');
+    lbl.htmlFor = qid + '-' + n; lbl.textContent = n;
+    wrap.appendChild(inp); wrap.appendChild(lbl);
+  }
+}
+
+// Progresso
+document.addEventListener('change', function() {
+  var answered = 0;
+  var all = document.querySelectorAll('.scale-wrap[id]');
+  for (var i = 0; i < all.length; i++) {
+    if (all[i].querySelector('input:checked')) answered++;
+  }
+  var pct = Math.round((answered / totalQ) * 100);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressText').textContent = answered + ' de ' + totalQ + ' respondidas';
+});
+
+// Submit
+document.getElementById('mainForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+  document.getElementById('msgError').style.display = 'none';
+
+  var emailVal = document.querySelector('input[name="email"]').value;
+  var msg = 'AUTOAVALIACAO MY BEST\nColaborador: ' + emailVal + '\n\n';
+  msg += '===== SECAO 1: CONDUTA GERAL =====\n\n';
+  var inS2 = false;
+  var allWraps = document.querySelectorAll('.scale-wrap[id]');
+  for (var i = 0; i < allWraps.length; i++) {
+    var id = allWraps[i].id;
+    if (id === 's2q1' && !inS2) { msg += '\n===== SECAO 2: OPERACAO TECNICA =====\n\n'; inS2 = true; }
+    var checked = allWraps[i].querySelector('input:checked');
+    var nota = checked ? checked.value : 'Nao respondido';
+    var obsEl = document.querySelector('textarea[name="obs_' + id + '"]');
+    var obs = (obsEl && obsEl.value) ? obsEl.value : '';
+    msg += (FIELD_NAMES[id] || id) + '\nNota: ' + nota + '/10\n';
+    if (obs) msg += 'Obs: ' + obs + '\n';
+    msg += '\n';
+  }
+
+  var payload = JSON.stringify({
+    access_key: '89b3dc62-5970-4115-a4df-d90c008cc7d8',
+    subject: 'Nova Autoavaliacao MY BEST - ' + emailVal,
+    from_name: 'Formulario MY BEST',
+    email: emailVal,
+    message: msg
   });
 
-  // Progresso
-  function updateProgress() {
-    let answered = 0;
-    scaleWraps.forEach(w => { if (w.querySelector('input:checked')) answered++; });
-    const pct = Math.round((answered / total) * 100);
-    document.getElementById('progressBar').style.width = pct + '%';
-    document.getElementById('progressText').textContent = `${answered} de ${total} respondidas`;
-  }
-  document.addEventListener('change', updateProgress);
-
-  // Submit via Web3Forms
-  document.getElementById('mainForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const btn = document.getElementById('submitBtn');
-    btn.disabled = true; btn.textContent = 'Enviando...';
-    document.getElementById('msgError').style.display = 'none';
-
-    const email = document.querySelector('input[name="email"]').value;
-    let msg = 'AUTOAVALIACAO MY BEST\nColaborador: ' + email + '\n\n';
-    msg += '===== SECAO 1: CONDUTA GERAL =====\n\n';
-    let inS2 = false;
-    const allWraps = document.querySelectorAll('.scale-wrap[id]');
-    allWraps.forEach(function(wrap) {
-      const id = wrap.id;
-      if (id === 's2q1' && !inS2) { msg += '\n===== SECAO 2: OPERACAO TECNICA =====\n\n'; inS2 = true; }
-      const checked = wrap.querySelector('input:checked');
-      const nota = checked ? checked.value : 'Nao respondido';
-      const obsEl = document.querySelector('textarea[name="obs_' + id + '"]');
-      const obs = obsEl ? obsEl.value : '';
-      msg += (fieldNames[id] || id) + '\nNota: ' + nota + '/10\n';
-      if (obs) msg += 'Obs: ' + obs + '\n';
-      msg += '\n';
-    });
-
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          access_key: '89b3dc62-5970-4115-a4df-d90c008cc7d8',
-          subject: `Nova Autoavaliação MY BEST_ – ${email}`,
-          from_name: 'Formulário MY BEST_',
-          email: email,
-          message: msg,
-          replyto: email
-        })
-      });
-      const data = await res.json();
-      if (data.success) {
-        document.getElementById('mainForm').style.display = 'none';
-        document.get
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://api.web3forms.com/submit', true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.setRequestHeader('Accept', 'application/json');
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      try {
+        var resp = JSON.parse(xhr.responseText);
+        if (resp.success) {
+          document.getElementById('mainForm').style.display = 'none';
+          document.getElementById('successScreen').classList.add('show');
+          window.scrollTo(0, 0);
+        } else {
+          document.getElementById('msgError').style.display = 'block';
+          btn.disabled = false;
+          btn.textContent = 'Enviar Autoavaliacao';
+        }
+      } catch(err) {
+        document.getElementById('msgError').style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Enviar Autoavaliacao';
+      }
+    }
+  };
+  xhr.onerror = function() {
+    document.getElementById('msgError').style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Enviar Autoavaliacao';
+  };
+  xhr.send(payload);
+});
+</script>
+</body>
+</html>
