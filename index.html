@@ -544,17 +544,19 @@
     document.getElementById('msgError').style.display = 'none';
 
     const email = document.querySelector('input[name="email"]').value;
-    let msg = `AUTOAVALIAÇÃO MY BEST_\nColaborador: ${email}\n\n`;
-    msg += `===== SEÇÃO 1: CONDUTA GERAL =====\n\n`;
+    let msg = 'AUTOAVALIACAO MY BEST\nColaborador: ' + email + '\n\n';
+    msg += '===== SECAO 1: CONDUTA GERAL =====\n\n';
     let inS2 = false;
-    scaleWraps.forEach(wrap => {
+    const allWraps = document.querySelectorAll('.scale-wrap[id]');
+    allWraps.forEach(function(wrap) {
       const id = wrap.id;
-      if (id === 's2q1' && !inS2) { msg += `\n===== SEÇÃO 2: OPERAÇÃO TÉCNICA =====\n\n`; inS2 = true; }
+      if (id === 's2q1' && !inS2) { msg += '\n===== SECAO 2: OPERACAO TECNICA =====\n\n'; inS2 = true; }
       const checked = wrap.querySelector('input:checked');
-      const nota = checked ? checked.value : 'Não respondido';
-      const obs = document.querySelector(`textarea[name="obs_${id}"]`)?.value || '';
-      msg += `${fieldNames[id]}\nNota: ${nota}/10\n`;
-      if (obs) msg += `Obs: ${obs}\n`;
+      const nota = checked ? checked.value : 'Nao respondido';
+      const obsEl = document.querySelector('textarea[name="obs_' + id + '"]');
+      const obs = obsEl ? obsEl.value : '';
+      msg += (fieldNames[id] || id) + '\nNota: ' + nota + '/10\n';
+      if (obs) msg += 'Obs: ' + obs + '\n';
       msg += '\n';
     });
 
