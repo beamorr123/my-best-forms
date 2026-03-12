@@ -471,7 +471,7 @@
 
     <div class="submit-area">
       <button type="submit" class="submit-btn" id="submitBtn">Enviar Autoavaliação</button>
-      <div class="submit-note">Suas respostas serão enviadas para mybestgestao@gmail.com</div>
+      <div class="submit-note">Suas respostas serão enviadas para <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2f42564d4a5c5b484a5c5b4e406f48424e4643014c4042">[email&#160;protected]</a></div>
       <div class="msg success" id="msgSuccess">✓ Autoavaliação enviada com sucesso!</div>
       <div class="msg error" id="msgError">✕ Erro ao enviar. Verifique sua conexão e tente novamente.</div>
     </div>
@@ -486,7 +486,7 @@
 
 <div class="footer">MY BEST_ · Autoavaliação de Colaboradores · Conteúdo Confidencial</div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const fieldNames = {
     s1q1:'1.0 Apresentação Pessoal',s1q2:'2.0 Uso do Uniforme',s1q3:'3.0 Comunicação',
     s1q4:'4.0 Receptividade',s1q5:'5.0 Organização e Limpeza',s1q6:'6.0 Das Refeições',
@@ -563,7 +563,7 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: 'COLE_SEU_ACCESS_KEY_AQUI',
+          access_key: '89b3dc62-5970-4115-a4df-d90c008cc7d8',
           subject: `Nova Autoavaliação MY BEST_ – ${email}`,
           from_name: 'Formulário MY BEST_',
           email: email,
@@ -574,8 +574,4 @@
       const data = await res.json();
       if (data.success) {
         document.getElementById('mainForm').style.display = 'none';
-        document.getElementById('successScreen').classList.add('show');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        document.getElementById('msgError').style.display = 'block';
-        btn.disabled = false; btn.textCo
+        document.get
