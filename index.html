@@ -1,1 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autoavaliação – MY BEST_</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #00FFF2;
+    --black: #000000;
+    --petrol: #00323C;
+    --silver: #D6D9DA;
+    --white: #FFFFFF;
+    --gray-bg: #F5F6F7;
+    --gray-border: #E0E3E5;
+    --gray-text: #6B7A80;
+    --petrol-light: #E8F3F5;
+  }
 
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--gray-bg);
+    font-family: 'Barlow', sans-serif;
+    color: var(--black);
+    min-height: 100vh;
+  }
+
+  .header {
+    background: var(--white);
+    border-bottom: 3px solid var(--blue);
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 16px rgba(0,50,60,0.07);
+  }
+
+  .logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .logo-text .accent { color: var(--blue); }
+
+  .header-divider { width: 1px; height: 30px; background: var(--gray-border); }
+
+  .header-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gray-text);
+  }
+
+  .progress-bar-wrap { height: 3px; background: var(--gray-border); }
+  .progress-bar-fill {
+    height: 3px;
+    background: var(--blue);
+    width: 0%;
+    transition: width 0.4s ease;
+  }
+  .progress-label {
+    background: var(--white);
+    padding: 7px 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--gray-text);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--gray-border);
+  }
+  .progress-label span { color: var(--petrol); font-weight: 800; }
+
+  .hero {
+    background: var(--petrol);
+    padding: 44px 40px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: 'MB_';
+    position: absolute;
+    right: -10px; top: -10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 130px;
+    color: rgba(0,255,242,0.05);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .hero-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 4.5vw, 48px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    color: var(--white);
+  }
+  .hero-title .accent { color: var(--blue); }
+  .hero-desc {
+    margin-top: 14px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    max-width: 540px;
+    line-height: 1.7;
+  }
+
+  .form-container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 36px 20px 80px;
+  }
+
+  .section-block { margin-bottom: 16px; margin-top: 52px; }
+  .section-block:first-child { margin-top: 0; }
+
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--petrol);
+    border-left: 3px solid var(--blue);
+    padding-left: 14px;
+  }
+
+  .q-card {
+    background: var(--white);
+    border: 1px solid var(--gray-border);
+    border-radius: 6px;
+    padding: 22px 24px 20px;
+    margin-bottom: 10px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .q-card:hover {
+    border-color: #9ef5f0;
+    box-shadow: 0 2px 16px rgba(0,255,242,0.07);
+  }
+
+  .q-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--blue);
+    text-transform: uppercase;
+    font-weight: 700;
+    background: var(--petrol);
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-bottom: 8px;
+  }
+  .q-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .q-desc {
+    font-size: 12px;
+    color: var(--gray-text);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .scale-wrap { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 6px; }
+  .scale-wrap input[type="radio"] { display: none; }
+  .scale-wrap label {
+    width: 42px; height: 42px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1.5px solid var(--gray-border);
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px; font-weight: 700;
+    color: #C0C8CA;
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+    background: var(--gray-bg);
+  }
+  .scale-wrap label:hover {
+    border-color: var(--blue);
+    color: var(--petrol);
+    background: var(--petrol-light);
+  }
+  .scale-wrap input[type="radio"]:checked + label {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: var(--black);
+    box-shadow: 0 2px 10px rgba(0,255,242,0.3);
+  }
+
+  .scale-hints {
+    display: flex; justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px; color: #C0C8CA;
+    letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
+    margin-bottom: 14px; padding: 0 2px;
+  }
+
+  .obs-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: #C0C8CA; margin-bottom: 6px;
+  }
+  .obs-label span { font-weight: 400; }
+
+  .obs-input {
+    width: 100%;
+    background: var(--gray-bg);
+    border: 1.5px solid var(--gray-border);
+    border-radius: 4px;
+    padding: 10px 14px;
+    color: var(--black);
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px; resize: vertical; min-height: 56px;
+    transition: border-color 0.2s; outline: none;
+  }
+  .obs-input:focus { border-color: var(--blue); background: var(--white); }
+  .obs-input::placeholder { color: #D0D8DA; }
+
+  .email-card {
+    background: var(--petrol-light);
+    border: 1.5px solid #B8DBE0;
+    border-radius: 6px; padding: 20px 24px; margin-bottom: 26px;
+  }
+  .email-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--petrol); margin-bottom: 10px;
+  }
+  .email-input {
+    width: 100%; background: var(--white);
+    border: 1.5px solid #B8DBE0; border-radius: 4px;
+    padding: 12px 16px; color: var(--black);
+    font-family: 'Barlow', sans-serif; font-size: 14px;
+    outline: none; transition: border-color 0.2s;
+  }
+  .email-input:focus { border-color: var(--blue); }
+  .email-input::placeholder { color: #9ABDC3; }
+
+  .submit-area { margin-top: 44px; text-align: center; }
+  .submit-btn {
+    background: var(--petrol); color: var(--blue);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px; font-weight: 800;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    border: none; padding: 18px 52px; border-radius: 4px;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .submit-btn:hover {
+    background: var(--black);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,50,60,0.18);
+  }
+  .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .submit-note {
+    margin-top: 10px; font-size: 11px; color: #BCC5C8;
+    font-family: 'Montserrat', sans-serif; letter-spacing: 0.04em;
+  }
+
+  .msg {
+    display: none; margin-top: 18px; padding: 14px 20px; border-radius: 4px;
+    font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  .msg.success { background: #E8F8F7; border: 1.5px solid var(--blue); color: var(--petrol); }
+  .msg.error { background: #FFF0F0; border: 1.5px solid #ffb3b3; color: #cc0000; }
+
+  .success-screen { display: none; text-align: center; padding: 80px 20px; }
+  .success-screen.show { display: block; }
+  .success-check {
+    width: 64px; height: 64px; background: var(--blue); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 24px; font-size: 28px; color: var(--black); font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .success-title {
+    font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 900;
+    text-transform: uppercase; color: var(--petrol); letter-spacing: -0.01em; margin-bottom: 10px;
+  }
+  .success-sub { color: var(--gray-text); font-size: 14px; line-height: 1.7; }
+
+  .footer {
+    background: var(--petrol); padding: 18px 40px; text-align: center;
+    font-family: 'Montserrat', sans-serif; font-size: 10px;
+    color: rgba(255,255,255,0.3); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
+  }
+
+  @media (max-width: 600px) {
+    .header { padding: 14px 16px; }
+    .hero { padding: 30px 16px 26px; }
+    .q-card { padding: 18px 16px; }
+    .scale-wrap label { width: 34px; height: 34px; font-size: 13px; }
+    .progress-label { padding: 7px 16px; }
+    .submit-btn { padding: 16px 36px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo-text">MY BEST<span class="accent">_</span></div>
+  <div class="header-divider"></div>
+  <div class="header-title">Autoavaliação de Colaboradores</div>
+</div>
+
+<div class="progress-bar-wrap">
+  <div class="progress-bar-fill" id="progressBar"></div>
+</div>
+<div class="progress-label">Progresso: <span id="progressText">0 de 48 respondidas</span></div>
+
+<div class="hero">
+  <div class="hero-label">Avaliação Personalizada</div>
+  <div class="hero-title">Auto<span class="accent">avaliação</span><br>MY BEST_</div>
+  <div class="hero-desc">Avalie honestamente seu desempenho em cada critério, de 1 a 10. As observações são opcionais e servem para complementar sua autoavaliação.</div>
+</div>
+
+<div class="form-container">
+  <form id="mainForm" autocomplete="off">
+
+    <div class="email-card">
+      <div class="email-label">★ E-mail do colaborador (obrigatório)</div>
+      <input class="email-input" type="email" name="email" placeholder="seu.email@mybest.com.br" required>
+    </div>
+
+    <!-- SEÇÃO 1 -->
+    <div class="section-block">
+      <div class="section-label">Seção 1 de 2</div>
+      <div class="section-title">Conduta Geral</div>
+    </div>
+
+    <div class="q-card"><div class="q-number">1.0</div><div class="q-title">Apresentação Pessoal</div><div class="q-desc">Cuidados com higiene, postura, aparência e respeito ao espaço coletivo.</div><div class="scale-wrap" id="s1q1"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q1" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">2.0</div><div class="q-title">Do Uso do Uniforme</div><div class="q-desc">Uso correto, completo e adequado do uniforme durante o trabalho.</div><div class="scale-wrap" id="s1q2"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q2" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">3.0</div><div class="q-title">Comunicação</div><div class="q-desc">Clareza, educação, objetividade e cordialidade ao se comunicar.</div><div class="scale-wrap" id="s1q3"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q3" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">4.0</div><div class="q-title">Receptividade</div><div class="q-desc">Atenção, simpatia e disponibilidade ao receber clientes e colegas.</div><div class="scale-wrap" id="s1q4"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q4" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">5.0</div><div class="q-title">Organização e Limpeza</div><div class="q-desc">Zelo pelo ambiente de trabalho, materiais e equipamentos.</div><div class="scale-wrap" id="s1q5"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q5" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">6.0</div><div class="q-title">Das Refeições</div><div class="q-desc">Respeito aos horários, bom senso e cuidado com o ambiente de refeição.</div><div class="scale-wrap" id="s1q6"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q6" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">7.0</div><div class="q-title">Do Uso do Telefone</div><div class="q-desc">É proibido o uso do celular durante o horário de trabalho, tanto na área técnica quanto no balcão de atendimento.</div><div class="scale-wrap" id="s1q7"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s1q7" placeholder="Adicione uma observação..."></textarea></div>
+
+    <!-- SEÇÃO 2 -->
+    <div class="section-block" style="margin-top:52px;">
+      <div class="section-label">Seção 2 de 2</div>
+      <div class="section-title">Operação Técnica</div>
+    </div>
+
+    <div class="q-card"><div class="q-number">1.0</div><div class="q-title">Apresentação</div><div class="q-desc">Como se apresenta tecnicamente diante do cliente e da equipe.</div><div class="scale-wrap" id="s2q1"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q1" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">2.3</div><div class="q-title">Posicionamento no Espaço Técnico</div><div class="q-desc">Posicionamento no espaço técnico e deixar o balcão livre para os auxiliares.</div><div class="scale-wrap" id="s2q2"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q2" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">2.4</div><div class="q-title">Prontidão para Recebimento do Cliente</div><div class="scale-wrap" id="s2q3"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q3" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">2.5</div><div class="q-title">Recebimento com Entusiasmo e Cordialidade</div><div class="q-desc">Recebimento do cliente com entusiasmo e cordialidade com aperto de mão.</div><div class="scale-wrap" id="s2q4"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q4" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">2.6</div><div class="q-title">Saudação Imediata ao Cliente</div><div class="q-desc">Recebimento e saudação do cliente imediatamente ao adentrar o espaço técnico.</div><div class="scale-wrap" id="s2q5"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q5" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">3.1.1</div><div class="q-title">Postura Corporal e Proatividade</div><div class="q-desc">Adoção de postura ativa, excluindo mãos na cintura e apoio nas máquinas, equipamentos ou paredes.</div><div class="scale-wrap" id="s2q6"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q6" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">3.1.2</div><div class="q-title">Proatividade e Visão 360°</div><div class="q-desc">Manter proatividade e visão generalizada de todo o espaço e dos clientes, com deslocamento constante.</div><div class="scale-wrap" id="s2q7"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q7" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">3.2.1</div><div class="q-title">Posicionamento Lateral ao Cliente</div><div class="q-desc">Priorização do posicionamento lateral ao cliente.</div><div class="scale-wrap" id="s2q8"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q8" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">3.2.2</div><div class="q-title">Exclusão do Posicionamento por Trás do Cliente</div><div class="scale-wrap" id="s2q9"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q9" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">3.2.3</div><div class="q-title">Orientação Verbal e Uso da Máquina</div><div class="q-desc">Utilização exclusiva da orientação verbal e auxílio por meio da própria máquina.</div><div class="scale-wrap" id="s2q10"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q10" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">4.0</div><div class="q-title">Comunicação</div><div class="q-desc">Clareza na transmissão das informações, escuta ativa e adequação da linguagem ao perfil do cliente.</div><div class="scale-wrap" id="s2q11"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q11" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">5.1.1</div><div class="q-title">Vínculo Profissional com o Cliente</div><div class="q-desc">Criar vínculo pessoal, amizade íntima ou qualquer relação que ultrapasse o ambiente profissional.</div><div class="scale-wrap" id="s2q12"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q12" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">5.1.2</div><div class="q-title">Contato por Canais Oficiais</div><div class="q-desc">Trocar número de WhatsApp pessoal ou manter contato fora dos canais oficiais da MY BEST.</div><div class="scale-wrap" id="s2q13"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q13" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">5.1.3</div><div class="q-title">Redes Sociais Pessoais</div><div class="q-desc">Seguir, ser seguido ou interagir com clientes por meio de redes sociais pessoais.</div><div class="scale-wrap" id="s2q14"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q14" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">5.1.4</div><div class="q-title">Compartilhamento de Experiências Pessoais</div><div class="q-desc">Compartilhar experiências pessoais íntimas.</div><div class="scale-wrap" id="s2q15"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q15" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">5.2.1</div><div class="q-title">Linguagem e Tratamento Formal</div><div class="q-desc">Utilizar diminutivos, apelidos ou qualquer forma de tratamento que comprometa a formalidade na relação profissional.</div><div class="scale-wrap" id="s2q16"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q16" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">5.2.2</div><div class="q-title">Comentários Inadequados</div><div class="q-desc">Manifestar comentários, brincadeiras ou insinuações de cunho sexual, pejorativo ou constrangedor.</div><div class="scale-wrap" id="s2q17"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q17" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">5.2.3</div><div class="q-title">Opiniões sobre Corpo e Estética</div><div class="q-desc">Emitir opiniões ou julgamentos sobre corpo, estética ou vida pessoal do cliente.</div><div class="scale-wrap" id="s2q18"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q18" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">5.2.4</div><div class="q-title">Postura Informal</div><div class="q-desc">Adotar postura informal que possa comprometer a autoridade e a credibilidade profissional.</div><div class="scale-wrap" id="s2q19"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q19" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">5.3.1</div><div class="q-title">Captação de Imagens do Cliente</div><div class="q-desc">Captar ou divulgar imagens de clientes sem consentimento formal, expresso e prévio.</div><div class="scale-wrap" id="s2q20"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q20" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">5.3.2</div><div class="q-title">Informações Estratégicas da MY BEST</div><div class="q-desc">Compartilhar informações internas ou estratégicas da MY BEST com clientes.</div><div class="scale-wrap" id="s2q21"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q21" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">5.3.3</div><div class="q-title">Exposição da Vida Pessoal</div><div class="q-desc">Expor vida pessoal íntima nas dependências da empresa ou durante o horário de trabalho.</div><div class="scale-wrap" id="s2q22"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q22" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">5.4.1</div><div class="q-title">Encontros Externos com Clientes</div><div class="q-desc">Convidar clientes para encontros, eventos sociais ou atividades externas de caráter pessoal.</div><div class="scale-wrap" id="s2q23"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q23" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">5.4.2</div><div class="q-title">Captação para Serviços Externos</div><div class="q-desc">Captar clientes da MY BEST para prestação de serviços externos, paralelos ou concorrentes.</div><div class="scale-wrap" id="s2q24"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q24" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">6.1</div><div class="q-title">Da Responsabilidade</div><div class="q-desc">Cumprimento de tarefas e compromissos assumidos.</div><div class="scale-wrap" id="s2q25"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q25" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">6.2</div><div class="q-title">Do Trabalho em Equipe</div><div class="q-desc">Colaboração, parceria e espírito coletivo.</div><div class="scale-wrap" id="s2q26"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q26" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">6.3</div><div class="q-title">Início do Treinamento</div><div class="q-desc">Preparação, acolhimento e orientação inicial ao cliente.</div><div class="scale-wrap" id="s2q27"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q27" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">6.4</div><div class="q-title">Periodização do Treinamento</div><div class="q-desc">Organização e planejamento das fases do treino.</div><div class="scale-wrap" id="s2q28"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q28" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">6.5</div><div class="q-title">Estrutura do Treinamento</div><div class="q-desc">Clareza, sequência lógica e coerência no treino proposto.</div><div class="scale-wrap" id="s2q29"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q29" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">6.6</div><div class="q-title">Banca de Exercícios</div><div class="q-desc">Diversificação, escolha e adaptação dos exercícios ao cliente.</div><div class="scale-wrap" id="s2q30"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q30" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">6.7.1</div><div class="q-title">Revezamento de Máquinas</div><div class="q-desc">Sobre não utilizar o revezamento de máquinas ou descanso ativo ao lado delas.</div><div class="scale-wrap" id="s2q31"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q31" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">6.7.2</div><div class="q-title">Espaço de Circulação</div><div class="q-desc">Preservar o espaço de circulação livre para os clientes e equipe técnica.</div><div class="scale-wrap" id="s2q32"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q32" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">6.7.3</div><div class="q-title">Uso Simultâneo de Espaços</div><div class="q-desc">Sobre não utilizar dois espaços simultaneamente para um único cliente.</div><div class="scale-wrap" id="s2q33"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q33" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">6.8</div><div class="q-title">Presença Ativa Durante o Treino</div><div class="q-desc">Acompanhamento próximo, atento e contínuo do cliente.</div><div class="scale-wrap" id="s2q34"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q34" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">6.9</div><div class="q-title">Demonstração de Exercícios</div><div class="q-desc">Clareza, técnica correta e segurança na demonstração.</div><div class="scale-wrap" id="s2q35"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q35" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">6.10</div><div class="q-title">Da Execução dos Exercícios</div><div class="scale-wrap" id="s2q36"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q36" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">6.11</div><div class="q-title">Manuseio dos Equipamentos</div><div class="q-desc">Manuseio de uso exclusivo pelo professor.</div><div class="scale-wrap" id="s2q37"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q37" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">6.12</div><div class="q-title">Organização dos Equipamentos</div><div class="q-desc">Garantir a ordem do ambiente.</div><div class="scale-wrap" id="s2q38"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q38" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">6.13</div><div class="q-title">Encerramento com Cordialidade</div><div class="scale-wrap" id="s2q39"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q39" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">7.1</div><div class="q-title">Planejamento do Treinamento</div><div class="q-desc">Elaboração do planejamento de forma assertiva e detalhada, de acordo com a metodologia e estrutura de planejamento.</div><div class="scale-wrap" id="s2q40"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q40" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="q-card"><div class="q-number">8.1</div><div class="q-title">PACTO Sistema — Avaliações</div><div class="q-desc">Registro e acompanhamento correto das avaliações no sistema.</div><div class="scale-wrap" id="s2q41"></div><div class="scale-hints"><span>Fraco</span><span>Excelente</span></div><div class="obs-label">Observação <span>— opcional</span></div><textarea class="obs-input" name="obs_s2q41" placeholder="Adicione uma observação..."></textarea></div>
+
+    <div class="submit-area">
+      <button type="submit" class="submit-btn" id="submitBtn">Enviar Autoavaliação</button>
+      <div class="submit-note">Suas respostas serão enviadas para mybestgestao@gmail.com</div>
+      <div class="msg success" id="msgSuccess">✓ Autoavaliação enviada com sucesso!</div>
+      <div class="msg error" id="msgError">✕ Erro ao enviar. Verifique sua conexão e tente novamente.</div>
+    </div>
+  </form>
+
+  <div class="success-screen" id="successScreen">
+    <div class="success-check">✓</div>
+    <div class="success-title">Avaliação Enviada!</div>
+    <div class="success-sub">Obrigado por completar sua autoavaliação.<br>As respostas foram registradas e enviadas com sucesso.</div>
+  </div>
+</div>
+
+<div class="footer">MY BEST_ · Autoavaliação de Colaboradores · Conteúdo Confidencial</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const fieldNames = {
+    s1q1:'1.0 Apresentação Pessoal',s1q2:'2.0 Uso do Uniforme',s1q3:'3.0 Comunicação',
+    s1q4:'4.0 Receptividade',s1q5:'5.0 Organização e Limpeza',s1q6:'6.0 Das Refeições',
+    s1q7:'7.0 Uso do Telefone',s2q1:'1.0 Apresentação (Técnica)',s2q2:'2.3 Posicionamento no Espaço',
+    s2q3:'2.4 Prontidão para Recebimento',s2q4:'2.5 Entusiasmo e Cordialidade',
+    s2q5:'2.6 Saudação Imediata',s2q6:'3.1.1 Postura Corporal',s2q7:'3.1.2 Visão 360°',
+    s2q8:'3.2.1 Posicionamento Lateral',s2q9:'3.2.2 Exclusão Posicionamento por Trás',
+    s2q10:'3.2.3 Orientação Verbal',s2q11:'4.0 Comunicação (Técnica)',
+    s2q12:'5.1.1 Vínculo Profissional',s2q13:'5.1.2 Canais Oficiais',
+    s2q14:'5.1.3 Redes Sociais',s2q15:'5.1.4 Experiências Pessoais',
+    s2q16:'5.2.1 Linguagem Formal',s2q17:'5.2.2 Comentários Inadequados',
+    s2q18:'5.2.3 Opiniões sobre Corpo',s2q19:'5.2.4 Postura Informal',
+    s2q20:'5.3.1 Captação de Imagens',s2q21:'5.3.2 Informações Estratégicas',
+    s2q22:'5.3.3 Exposição Vida Pessoal',s2q23:'5.4.1 Encontros Externos',
+    s2q24:'5.4.2 Captação Serviços Externos',s2q25:'6.1 Responsabilidade',
+    s2q26:'6.2 Trabalho em Equipe',s2q27:'6.3 Início do Treinamento',
+    s2q28:'6.4 Periodização',s2q29:'6.5 Estrutura do Treinamento',
+    s2q30:'6.6 Banca de Exercícios',s2q31:'6.7.1 Revezamento de Máquinas',
+    s2q32:'6.7.2 Espaço de Circulação',s2q33:'6.7.3 Dois Espaços Simultâneos',
+    s2q34:'6.8 Presença Ativa',s2q35:'6.9 Demonstração de Exercícios',
+    s2q36:'6.10 Execução dos Exercícios',s2q37:'6.11 Manuseio dos Equipamentos',
+    s2q38:'6.12 Organização dos Equipamentos',s2q39:'6.13 Encerramento com Cordialidade',
+    s2q40:'7.1 Planejamento do Treinamento',s2q41:'8.1 PACTO Sistema – Avaliações'
+  };
+
+  // Gera radios
+  const scaleWraps = document.querySelectorAll('.scale-wrap[id]');
+  const total = scaleWraps.length;
+  scaleWraps.forEach(wrap => {
+    for (let i = 1; i <= 10; i++) {
+      const input = document.createElement('input');
+      input.type = 'radio'; input.name = wrap.id;
+      input.id = `${wrap.id}-${i}`; input.value = i;
+      const label = document.createElement('label');
+      label.htmlFor = `${wrap.id}-${i}`; label.textContent = i;
+      wrap.appendChild(input); wrap.appendChild(label);
+    }
+  });
+
+  // Progresso
+  function updateProgress() {
+    let answered = 0;
+    scaleWraps.forEach(w => { if (w.querySelector('input:checked')) answered++; });
+    const pct = Math.round((answered / total) * 100);
+    document.getElementById('progressBar').style.width = pct + '%';
+    document.getElementById('progressText').textContent = `${answered} de ${total} respondidas`;
+  }
+  document.addEventListener('change', updateProgress);
+
+  // Submit via Web3Forms
+  document.getElementById('mainForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true; btn.textContent = 'Enviando...';
+    document.getElementById('msgError').style.display = 'none';
+
+    const email = document.querySelector('input[name="email"]').value;
+    let msg = `AUTOAVALIAÇÃO MY BEST_\nColaborador: ${email}\n\n`;
+    msg += `===== SEÇÃO 1: CONDUTA GERAL =====\n\n`;
+    let inS2 = false;
+    scaleWraps.forEach(wrap => {
+      const id = wrap.id;
+      if (id === 's2q1' && !inS2) { msg += `\n===== SEÇÃO 2: OPERAÇÃO TÉCNICA =====\n\n`; inS2 = true; }
+      const checked = wrap.querySelector('input:checked');
+      const nota = checked ? checked.value : 'Não respondido';
+      const obs = document.querySelector(`textarea[name="obs_${id}"]`)?.value || '';
+      msg += `${fieldNames[id]}\nNota: ${nota}/10\n`;
+      if (obs) msg += `Obs: ${obs}\n`;
+      msg += '\n';
+    });
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'COLE_SEU_ACCESS_KEY_AQUI',
+          subject: `Nova Autoavaliação MY BEST_ – ${email}`,
+          from_name: 'Formulário MY BEST_',
+          email: email,
+          message: msg,
+          replyto: email
+        })
+      });
+      const data = await res.json();
+      if (data.success) {
+        document.getElementById('mainForm').style.display = 'none';
+        document.getElementById('successScreen').classList.add('show');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        document.getElementById('msgError').style.display = 'block';
+        btn.disabled = false; btn.textCo
